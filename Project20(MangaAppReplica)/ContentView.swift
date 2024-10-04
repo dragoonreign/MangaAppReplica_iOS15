@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct FreeMangaView: View {
+    VStack {
+        Picker("Flavor", selection: $selectedFlavor) {
+            ForEach(Flavor.allCases) { flavor in
+                Text(flavor.rawValue.capitalized)
+            }
+        }
+        Picker("Topping", selection: $selectedTopping) {
+            ForEach(Topping.allCases) { topping in
+                Text(topping.rawValue.capitalized)
+            }
+        }
+    }
+    .pickerStyle(.segmented)
+}
+
 struct ContentView: View {
     enum Flavor: String, CaseIterable, Identifiable {
         case chocolate, vanilla, strawberry
@@ -34,19 +50,41 @@ struct ContentView: View {
 @State private var suggestedTopping: Topping = .nuts
     var body: some View {
         NavigationView {
-            VStack {
-                Picker("Flavor", selection: $selectedFlavor) {
-                    ForEach(Flavor.allCases) { flavor in
-                        Text(flavor.rawValue.capitalized)
-                    }
+            // banner view here
+            
+            ScrollView(.vertical) {
+                // all the manga here
+                // initially centered content
+                // ranks from 1 takes up the whole width 2-12 
+                // List(mangalist) // 2-12
+                
+                ScrollView(.horizontal) {
+                    // 新連載
                 }
-                Picker("Topping", selection: $selectedTopping) {
-                    ForEach(Topping.allCases) { topping in
-                        Text(topping.rawValue.capitalized)
-                    }
+    
+                ScrollView(.horizontal) {
+                    // 最近見た
+                }
+    
+                ScrollView(.horizontal) {
+                    // ジャンプ+　無料作品
+                    //　same as the top scroll view
+                }
+    
+                ScrollView(.horizontal) {
+                    // アニメ化作品
+                }
+    
+                ScrollView(.horizontal) {
+                    // 最新の読切はこちら
+                }
+    
+                ScrollView(.horizontal) {
+                    // 今だけ無料
                 }
             }
-            .pickerStyle(.segmented)
+            .defaultScrollAnchor(.center)
+
         }
             
         TabView {
