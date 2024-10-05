@@ -11,11 +11,13 @@ import SwiftUI
 class Manga: Identifiable, Codable {
     var id = UUID()
 //    var images = [Image]()
+    var title: String = "Manga Title"
     var author: String = "Manga Author"
     var url: String = "Manga URL"
-    var volume: Int = 10
+    var shelf: Int = 10
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
+    var isUpdated: Bool = false
     
     static let example = Manga()
 }
@@ -24,54 +26,66 @@ class Manga: Identifiable, Codable {
 class Mangas: ObservableObject {
     static let saveKey = "SaveData"
     
-    @Published private(set) var mangaVolume: [Manga]
+    var manga = Manga()
+    var manga2 = Manga()
+    var manga3 = Manga()
+    @Published private(set) var shelf: [Manga]
     // @Published private(set) var mangaFavorite: [Manga]
     // @Published private(set) var mangaRecent: [Manga]
     // @Published private(set) var mangaDict<"String", Manga>: [:]
     
     init() {
-        //challenge 2
-        mangaVolume = []
-        mangaFavorite = []
-        mangaRecent = []
-        mangaDict = [
-            "volumes" : mangaVolume,
-            "favorites" : mangaFavorite,
-            "recents" : mangaRecent,
-        ]
+        shelf = []
+        shelf.append(manga)
+        shelf.append(manga2)
+        shelf.append(manga3)
+//        mangaFavorite = []
+//        mangaRecent = []
+//        mangaDict = [
+//            "shelves" : shelf,
+//            "favorites" : mangaFavorite,
+//            "recents" : mangaRecent,
+//        ]
         
         if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
-                mangaVolume = decoded
+                shelf = decoded
                 return
             }
         }
     }
     
-   func addRecent(_ manga: Manga) {
-       mangaRecent.append(manga)
-       save()
-   }
-        
-   func addFavorite(_ manga: Manga) {
-       mangaFavorite.append(manga)
-       save()
-   }
+    func addshelf(_ manga: Manga) {
+        shelf.append(manga)
+        save()
+    }
+    
+//    func addRecent(_ manga: Manga) {
+//       mangaRecent.append(manga)
+//       save()
+//    }
+//
+//    func addFavorite(_ manga: Manga) {
+//       mangaFavorite.append(manga)
+//       save()
+//    }
 
     func toggleFavorite(_ manga: Manga) {
         objectWillChange.send()
         manga.isFavorite.toggle()
-        save()
+//        save()
     }
     
     func toggleRecentlyRead(_ manga: Manga) {
         objectWillChange.send()
+//        manga.isRecentlyRead = true
         manga.isRecentlyRead.toggle()
+//        print("Recently Read")
         save()
     }
     
     private func save() {
-        if let encoded = try? JSONEncoder().encode(mangaVolume) {
+        if let encoded = try? JSONEncoder().encode(shelf) {
             saveFile(data: encoded)
         }
     }

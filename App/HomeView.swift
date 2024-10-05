@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedFlavor: Flavor = .chocolate
+    @State private var suggestedTopping: Topping = .nuts
+    
+    @EnvironmentObject var mangas: Mangas
+    
     var body: some View {
         NavigationView {
             // banner view here
@@ -32,7 +37,7 @@ struct HomeView: View {
                     Text("Recent")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView(manga: manga)
+                    HorizontalMangaSelectionView()
                 }
                 
                 VStack {
@@ -40,7 +45,7 @@ struct HomeView: View {
                     Text("Jump+ Free Samples")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView(manga: manga)
+                    HorizontalMangaSelectionView()
                 }
                 
                 VStack {
@@ -48,7 +53,7 @@ struct HomeView: View {
                     Text("Recently Animated")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView(manga: manga)
+                    HorizontalMangaSelectionView()
                 }
                 
                 VStack {
@@ -56,7 +61,7 @@ struct HomeView: View {
                     Text("Read one shots here")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView(manga: manga)
+                    HorizontalMangaSelectionView()
                 }
                 
                 VStack {
@@ -64,7 +69,7 @@ struct HomeView: View {
                     Text("Free for limited time")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView(manga: manga)
+                    HorizontalMangaSelectionView()
                 }
             }
 //            .defaultScrollAnchor(.center)
@@ -75,5 +80,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(Mangas())
     }
 }

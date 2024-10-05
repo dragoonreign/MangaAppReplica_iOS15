@@ -30,22 +30,19 @@ extension Flavor {
 }
 
 struct ContentView: View {
-    @State private var selectedFlavor: Flavor = .chocolate
-    @State private var suggestedTopping: Topping = .nuts
-    
-    let manga = Manga()
+    @StateObject var mangas = Mangas()
     
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "tray.and.arrow.down.fill")
+                    Label("Home", systemImage: "house")
                 }
                 .badge(2)
         
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: "tray.and.arrow.up.fill")
+                    Label("Favorites", systemImage: "star")
                 }
         
             AccountView()
@@ -54,6 +51,7 @@ struct ContentView: View {
                 }
                 .badge("!")
         }
+        .environmentObject(mangas)
     }
 }
 
