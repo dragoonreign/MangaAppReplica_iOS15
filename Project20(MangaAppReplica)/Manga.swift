@@ -48,11 +48,16 @@ class Mangas: ObservableObject {
         }
     }
     
-//    func add(_ manga: Manga) {
-//        mangaVolume.append(manga)
-//        save()
-//    }
-    
+   func addRecent(_ manga: Manga) {
+       mangaRecent.append(manga)
+       save()
+   }
+        
+   func addFavorite(_ manga: Manga) {
+       mangaFavorite.append(manga)
+       save()
+   }
+
     func toggleFavorite(_ manga: Manga) {
         objectWillChange.send()
         manga.isFavorite.toggle()
