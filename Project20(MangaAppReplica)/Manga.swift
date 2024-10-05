@@ -25,9 +25,9 @@ class Mangas: ObservableObject {
     static let saveKey = "SaveData"
     
     @Published private(set) var mangaVolume: [Manga]
-    @Published private(set) var mangaFavorite: [Manga]
-    @Published private(set) var mangaRecent: [Manga]
-    @Published private(set) var mangaDict<"String", Manga>: [:]
+    // @Published private(set) var mangaFavorite: [Manga]
+    // @Published private(set) var mangaRecent: [Manga]
+    // @Published private(set) var mangaDict<"String", Manga>: [:]
     
     init() {
         //challenge 2
