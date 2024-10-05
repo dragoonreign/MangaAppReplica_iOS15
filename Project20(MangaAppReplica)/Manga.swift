@@ -25,15 +25,24 @@ class Mangas: ObservableObject {
     static let saveKey = "SaveData"
     
     @Published private(set) var mangaVolume: [Manga]
+    @Published private(set) var mangaFavorite: [Manga]
+    @Published private(set) var mangaRecent: [Manga]
     @Published private(set) var mangaDict<"String", Manga>: [:]
     
     init() {
         //challenge 2
         mangaVolume = []
+        mangaFavorite = []
+        mangaRecent = []
+        mangaDict = [
+            "volumes" : mangaVolume,
+            "favorites" : mangaFavorite,
+            "recents" : mangaRecent,
+        ]
         
         if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
-                mangaVolume = decoded
+                mangaDict = decoded
                 return
             }
         }
