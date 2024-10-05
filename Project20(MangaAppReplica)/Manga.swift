@@ -42,7 +42,7 @@ class Mangas: ObservableObject {
         
         if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
-                mangaDict = decoded
+                mangaVolume = decoded
                 return
             }
         }
