@@ -33,11 +33,20 @@ struct HomeView: View {
                 // List(mangalist) // 2-12
                 
                 VStack {
+                    // TEST
+                    // Replace here with other
+                    Text("Jump+ manga list")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.largeTitle)
+                    MangaWeeklyView()
+                }
+                
+                VStack {
                     // 最近見た
                     Text("Recent")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView()
+                    HorizontalMangaSelectionView(filter: .recentlyRead)
                 }
                 
                 VStack {
@@ -45,7 +54,7 @@ struct HomeView: View {
                     Text("Jump+ Free Samples")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView()
+                    HorizontalMangaSelectionView(filter: .none)
                 }
                 
                 VStack {
@@ -53,24 +62,24 @@ struct HomeView: View {
                     Text("Recently Animated")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    HorizontalMangaSelectionView()
+                    HorizontalMangaSelectionView(filter: .none)
                 }
                 
-                VStack {
-                    // 最新の読切はこちら
-                    Text("Read one shots here")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle)
-                    HorizontalMangaSelectionView()
-                }
-                
-                VStack {
-                    // 今だけ無料
-                    Text("Free for limited time")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle)
-                    HorizontalMangaSelectionView()
-                }
+//                VStack {
+//                    // 最新の読切はこちら
+//                    Text("Read one shots here")
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .font(.largeTitle)
+//                    HorizontalMangaSelectionView()
+//                }
+//
+//                VStack {
+//                    // 今だけ無料
+//                    Text("Free for limited time")
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .font(.largeTitle)
+//                    HorizontalMangaSelectionView()
+//                }
             }
 //            .defaultScrollAnchor(.center)
         }

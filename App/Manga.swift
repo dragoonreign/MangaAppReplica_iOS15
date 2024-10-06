@@ -73,14 +73,12 @@ class Mangas: ObservableObject {
     func toggleFavorite(_ manga: Manga) {
         objectWillChange.send()
         manga.isFavorite.toggle()
-//        save()
+        save()
     }
     
     func toggleRecentlyRead(_ manga: Manga) {
         objectWillChange.send()
-//        manga.isRecentlyRead = true
         manga.isRecentlyRead.toggle()
-//        print("Recently Read")
         save()
     }
     
