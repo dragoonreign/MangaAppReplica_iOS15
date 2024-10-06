@@ -49,12 +49,22 @@ struct MangaWeeklyView: View {
                                 .frame(height: 200)
                                 .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                         }
-                    }
-                    
-                    
+                        
                         LazyVGrid(columns: columnsAdaptive) {
                             ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num2, manga in
-                                if (num > 0 && num < 3) {
+                                if (num2 > 0 && num2 < 3) {
+                                    Button() {
+                                        mangas.toggleRecentlyRead(manga)
+                                    } label: {
+                                        // Show the image of the manga
+                                        Image("US")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(minWidth: 0, maxWidth: .infinity)
+                                            .frame(height: 250)
+                                            .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                                    }
+                                } else if (num2 >= 3) {
                                     Button() {
                                         mangas.toggleRecentlyRead(manga)
                                     } label: {
@@ -70,6 +80,9 @@ struct MangaWeeklyView: View {
                             }
                         }
                         .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
+                    }
+                    
+                    
                     
                     
 //                    if (num > 3) {
