@@ -77,6 +77,7 @@ struct HomeView: View {
             }
 //            .defaultScrollAnchor(.center)
 //            .background(.primary)
+//            .preferredColorScheme(.dark)
         }
     }
 }
