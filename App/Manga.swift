@@ -25,6 +25,10 @@ class Manga: Identifiable, Codable {
     var mangaUpdateDay: MangaUpdateDay = .monday
     
     static let example = Manga()
+
+    init (mangaUpdateDay) {
+        self.mangaUpdateDay = mangaUpdateDay
+    }
 }
 
 
@@ -32,9 +36,9 @@ class Mangas: ObservableObject {
     static let saveKey = "SaveData"
     
     var manga = Manga()
-    var manga2 = Manga()
+    var manga2 = Manga(.tuesday)
     var manga3 = Manga()
-    var manga4 = Manga()
+    var manga4 = Manga(.monday)
     @Published private(set) var shelf: [Manga]
     // @Published private(set) var mangaFavorite: [Manga]
     // @Published private(set) var mangaRecent: [Manga]
