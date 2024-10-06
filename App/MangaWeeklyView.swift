@@ -12,11 +12,15 @@ struct MangaWeeklyView: View {
     @State private var suggestedTopping: Topping = .nuts
     
     @EnvironmentObject var mangas: Mangas
+
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
     
     var body: some View {
         // 最近見た
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
+            LazyVGrid(columns: columns) {
                 ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
                     if (num == 0) {
                         Button() {
