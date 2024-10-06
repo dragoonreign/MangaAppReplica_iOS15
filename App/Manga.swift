@@ -22,7 +22,7 @@ class Manga: Identifiable, Codable {
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
-    var updateDay: MangaUpdateDay = .monday
+    var mangaUpdateDay: MangaUpdateDay = .monday
     
     static let example = Manga()
 }
