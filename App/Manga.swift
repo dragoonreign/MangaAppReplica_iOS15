@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+enum MangaUpdateDay {
+    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+}
+
 class Manga: Identifiable, Codable {
     var id = UUID()
 //    var images = [Image]()
@@ -18,7 +22,7 @@ class Manga: Identifiable, Codable {
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
-    var updateDay: String = "Monday"
+    var updateDay: MangaUpdateDay = .monday
     
     static let example = Manga()
 }
