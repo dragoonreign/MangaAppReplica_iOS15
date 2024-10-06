@@ -26,7 +26,7 @@ class Manga: Identifiable, Codable {
     
     static let example = Manga()
 
-    init (mangaUpdateDay) {
+    init (mangaUpdateDay: MangaUpdateDay) {
         self.mangaUpdateDay = mangaUpdateDay
     }
 }
