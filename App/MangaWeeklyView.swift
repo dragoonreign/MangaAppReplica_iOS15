@@ -31,7 +31,7 @@ struct MangaWeeklyView: View {
     
     var body: some View {
 //        uncomment here later
-//        MyCalenderView()
+//        MyCalenderView() filter out the manga by the day
         
         // 最近見た
         ScrollView(.vertical, showsIndicators: false) {
@@ -81,70 +81,7 @@ struct MangaWeeklyView: View {
                         }
                         .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
                     }
-                    
-                    
-                    
-                    
-//                    if (num > 3) {
-//                        LazyVGrid(columns: columnsFixed) {
-//                            ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
-//                                if (num > 3) {
-//                                    Button() {
-//                                        mangas.toggleRecentlyRead(manga)
-//                                    } label: {
-//                                        // Show the image of the manga
-//                                        Image("US")
-//                                            .resizable()
-//                                            .scaledToFill()
-//                                            .frame(minWidth: 0, maxWidth: .infinity)
-//                                            .frame(height: 175)
-//                                            .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-//                                    }
-//                                }
-//                            }
-//                        }
-//                        .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
-//                    }
-                    
-//                    if (num == 0) {
-//                        LazyVGrid(columns: columns) {
-//                            Button() {
-//                                mangas.toggleRecentlyRead(manga)
-//                            } label: {
-//                                // Show the image of the manga
-//                                Image("US")
-//                                    .resizable()
-//                                    .frame(width: 400, height: 250)
-//                                    .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-//                            }
-//                        }
-//                    } else if (num > 0 && num < 3) {
-//                        LazyVGrid(columns: columns2) {
-//                            Button() {
-//                                mangas.toggleRecentlyRead(manga)
-//                            } label: {
-//                                // Show the image of the manga
-//                                Image("US")
-//                                    .resizable()
-//                                    .frame(width: 200, height: 175)
-//                                    .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-//                            }
-//                        }
-//                    } else {
-//                        LazyVGrid(columns: columns3) {
-//                            Button() {
-//                                mangas.toggleRecentlyRead(manga)
-//                            } label: {
-//                                // Show the image of the manga
-//                                Image("US")
-//                                    .resizable()
-//                                    .frame(width: 200, height: 100)
-//                                    .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-//                            }
-//                        }
-//                    }
                 }
-                
             }
             //vstack
 //            .background(.primary)
