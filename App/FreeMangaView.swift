@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct FreeMangaView: View {
+    @State private var selectedFlavor: Flavor = .chocolate
+    @State private var suggestedTopping: Topping = .nuts
+    
     var body: some View {
+        Section {
+            Picker("Flavor", selection: $selectedFlavor) {
+                ForEach(Flavor.allCases) { flavor in
+                    Text(flavor.rawValue.capitalized)
+                }
+            }
+            .pickerStyle(.segmented)
+        }
         Text("Hello world")
 //        VStack {
 //            Picker("Flavor", selection: $selectedFlavor) {

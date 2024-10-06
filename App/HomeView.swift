@@ -19,14 +19,7 @@ struct HomeView: View {
             
             ScrollView(.vertical) {
                 // 新連載
-                Section {
-                    Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { flavor in
-                            Text(flavor.rawValue.capitalized)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
+                
                 // all the manga here
                 // initially centered content
                 // ranks from 1 takes up the whole width 2-12 
@@ -46,6 +39,7 @@ struct HomeView: View {
                     Text("Recent")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
+                        .foregroundColor(.primary)
                     HorizontalMangaSelectionView(filter: .recentlyRead)
                 }
                 
@@ -82,6 +76,7 @@ struct HomeView: View {
 //                }
             }
 //            .defaultScrollAnchor(.center)
+//            .background(.primary)
         }
     }
 }

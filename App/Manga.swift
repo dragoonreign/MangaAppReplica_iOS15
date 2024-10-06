@@ -29,6 +29,7 @@ class Mangas: ObservableObject {
     var manga = Manga()
     var manga2 = Manga()
     var manga3 = Manga()
+    var manga4 = Manga()
     @Published private(set) var shelf: [Manga]
     // @Published private(set) var mangaFavorite: [Manga]
     // @Published private(set) var mangaRecent: [Manga]
@@ -39,6 +40,7 @@ class Mangas: ObservableObject {
         shelf.append(manga)
         shelf.append(manga2)
         shelf.append(manga3)
+        shelf.append(manga4)
 //        mangaFavorite = []
 //        mangaRecent = []
 //        mangaDict = [

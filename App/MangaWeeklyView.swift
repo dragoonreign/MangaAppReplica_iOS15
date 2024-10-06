@@ -15,36 +15,44 @@ struct MangaWeeklyView: View {
     
     var body: some View {
         // 最近見た
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-//                ForEach(mangas.shelf) { manga in
-//                    Button() {
-//                        mangas.toggleRecentlyRead(manga)
-//                    } label: {
-//                        // Show the image of the manga
-//                        Image("US")
-//                            .resizable()
-//                            .frame(width: 200, height: 150)
-//                            .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-//                    }
-//                }
-                ForEach(0..<10) { num in
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
                     if (num == 0) {
-                        Image("US")
-                            .resizable()
-//                            .scaledToFit()
-                            .frame(maxWidth: .infinity, maxHeight: 200)
-                    } else if (num > 0 && num < 3) {
-                        Image("US")
-                            .resizable()
-                            .frame(width: 200, height: 150)
+                        Button() {
+                            mangas.toggleRecentlyRead(manga)
+                        } label: {
+                            // Show the image of the manga
+                            Image("US")
+                                .resizable()
+                                .frame(width: 400, height: 250)
+                                .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                        }
+                    } else if (num == 0) {
+                        Button() {
+                            mangas.toggleRecentlyRead(manga)
+                        } label: {
+                            // Show the image of the manga
+                            Image("US")
+                                .resizable()
+                                .frame(width: 200, height: 175)
+                                .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                        }
                     } else {
-                        Image("US")
-                            .resizable()
-                            .frame(width: 200, height: 75)
+                        Button() {
+                            mangas.toggleRecentlyRead(manga)
+                        } label: {
+                            // Show the image of the manga
+                            Image("US")
+                                .resizable()
+                                .frame(width: 200, height: 100)
+                                .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                        }
                     }
                 }
             }
+            //vstack
+            .background(.primary)
         }
     }
 }
