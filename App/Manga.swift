@@ -23,6 +23,8 @@ class Manga: Identifiable, Codable {
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
     var mangaUpdateDay: MangaUpdateDay = .monday
+    var totalViews: Int = 100
+    var totalComments: Int = 250
     
     init() {
         

@@ -36,8 +36,8 @@ struct HomeView: View {
                     MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                     MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
                 }
-                .background(.black)
-//                .preferredColorScheme(.dark)
+//                .background(.black)
+                
                 
                 VStack {
                     // 最近見た

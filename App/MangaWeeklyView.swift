@@ -37,11 +37,11 @@ struct MangaWeeklyView: View {
     ]
     
     let columnsAdaptiveRank2 = [
-        GridItem(.adaptive(minimum: m_ImageSizeRank2To3))
+        GridItem(.adaptive(minimum: 150))
     ]
     
     let columnsAdaptiveRank4 = [
-        GridItem(.adaptive(minimum: m_ImageSizeRank4))
+        GridItem(.adaptive(minimum: 100))
     ]
     
     var gridLayout = [
@@ -78,11 +78,15 @@ struct MangaWeeklyView: View {
                                             .padding([.leading])
                                         Text("View")
                                             .foregroundColor(.primary)
+                                        Text(manga.totalViews)
+                                            .foregroundColor(.primary)
                                     }
                                     HStack {
                                         Image(systemName: "house")
                                             .padding([.leading])
                                         Text("Comments")
+                                            .foregroundColor(.primary)
+                                        Text(manga.totalComments)
                                             .foregroundColor(.primary)
                                     }
                                 }
@@ -99,7 +103,7 @@ struct MangaWeeklyView: View {
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: m_ImageSizeRank2To3)
+                                                        .frame(height: 100)
                                                         .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                                                 }
                                             
@@ -108,11 +112,15 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("View")
                                                         .foregroundColor(.primary)
+                                                    Text(manga.totalViews)
+                                                        .foregroundColor(.primary)
                                                 }
                                                 HStack {
                                                     Image(systemName: "house")
                                                         .padding([.leading])
                                                     Text("Comments")
+                                                        .foregroundColor(.primary)
+                                                    Text(manga.totalComments)
                                                         .foregroundColor(.primary)
                                                 }
                                             }
@@ -126,7 +134,7 @@ struct MangaWeeklyView: View {
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: m_ImageSizeRank4)
+                                                        .frame(height: 100)
                                                         .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                                                 }
                                             
@@ -135,11 +143,15 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("View")
                                                         .foregroundColor(.primary)
+                                                    Text(manga.totalViews)
+                                                        .foregroundColor(.primary)
                                                 }
                                                 HStack {
                                                     Image(systemName: "house")
                                                         .padding([.leading])
                                                     Text("Comments")
+                                                        .foregroundColor(.primary)
+                                                    Text(manga.totalComments)
                                                         .foregroundColor(.primary)
                                                 }
                                             }

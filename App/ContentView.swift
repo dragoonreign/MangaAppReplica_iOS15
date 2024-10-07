@@ -39,17 +39,20 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
                 .badge(2)
+                .colorScheme(.dark)
         
             FavoritesView()
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
+                .colorScheme(.light)
         
             AccountView()
                 .tabItem {
                     Label("Account", systemImage: "person.crop.circle.fill")
                 }
                 .badge("!")
+                .colorScheme(.light)
         }
         .environmentObject(mangas)
     }
