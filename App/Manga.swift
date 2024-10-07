@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum MangaUpdateDay {
+enum MangaUpdateDay: Codable {
     case monday, tuesday, wednesday, thursday, friday, saturday, sunday
 }
 
@@ -22,7 +22,7 @@ class Manga: Identifiable, Codable {
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
-//    var mangaUpdateDay: MangaUpdateDay = .monday
+    var mangaUpdateDay: MangaUpdateDay = .monday
     
     init() {
         

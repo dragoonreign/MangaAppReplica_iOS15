@@ -27,6 +27,7 @@ struct HomeView: View {
 
                 //use array of fitered manga ex) List of monday mangas
                 AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
+//                    .background(.black)
                 
                 VStack {
                     // TEST

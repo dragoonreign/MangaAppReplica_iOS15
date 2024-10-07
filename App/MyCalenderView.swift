@@ -11,7 +11,7 @@ struct MyCalenderView: View {
     @State private var date = Date.now
     @State private var daysOfWeek = Date.capitalizedFirstLettersOfWeekdays
     
-    @State private var pickedDayOfWeek = 0
+    @State private var pickedDayOfWeek = -1
     
     var getDayOfWeek: Int {
         var dayInt = 0
@@ -60,11 +60,23 @@ struct MyCalenderView: View {
                                         .fill(Color.blue)
                                         .frame(width: 30, height: 30)
                                 )
-                        } else if (getDayOfWeek != index) {
+                        } else if (getDayOfWeek != index && pickedDayOfWeek != index) {
                             Text(daysOfWeek[index])
                                 .fontWeight(.black)
                                 .foregroundStyle(.black)
                                 .frame(maxWidth: .infinity)
+                        }
+                        
+                        if (pickedDayOfWeek == index) {
+                            Text(daysOfWeek[index])
+                                .fontWeight(.black)
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    Circle()
+                                        .fill(Color.gray)
+                                        .frame(width: 30, height: 30)
+                                )
                         }
                     }
                 }
