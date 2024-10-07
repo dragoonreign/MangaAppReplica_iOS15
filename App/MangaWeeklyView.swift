@@ -30,11 +30,11 @@ struct MangaWeeklyView: View {
     ]
     
     var body: some View {
-//        uncomment here later
-//        MyCalenderView() filter out the manga by the day
-        
         // 最近見た
         ScrollView(.vertical, showsIndicators: false) {
+            //filter out the manga by the day
+            MyCalenderView()
+            
             LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
                 ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
                     if (num == 0) {
