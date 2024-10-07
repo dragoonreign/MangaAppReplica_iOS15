@@ -20,7 +20,7 @@ struct FavoritesView: View {
             VStack {
                 // TEST
                 // Replace here with other
-                
+                Text("hello world ")
                 MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                 MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
             }

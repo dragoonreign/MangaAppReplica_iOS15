@@ -7,78 +7,6 @@
 
 import SwiftUI
 
-struct MangaListView: View {
-    @EnvironmentObject var mangas: Mangas
-    
-    let columnsFlex = [
-        GridItem(.flexible(minimum: 100.0))
-    ]
-    
-    let columnsFixed = [
-        GridItem(.fixed(100.0))
-    ]
-    
-    let columnsAdaptive = [
-        GridItem(.adaptive(minimum: 150))
-    ]
-    
-    var gridLayout = [
-        GridItem()
-    ]
-    
-    var body: some View {
-        
-        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 1) {
-            ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
-                if (num == 0) {
-                    Button() {
-                        mangas.toggleRecentlyRead(manga)
-                    } label: {
-                        // Show the image of the manga
-                        Image("US")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(height: 200)
-                            .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-                    }
-                    
-                    LazyVGrid(columns: columnsAdaptive) {
-                        ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num2, manga in
-                            if (num2 > 0 && num2 < 3) {
-                                Button() {
-                                    mangas.toggleRecentlyRead(manga)
-                                } label: {
-                                    // Show the image of the manga
-                                    Image("US")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                        .frame(height: 200)
-                                        .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-                                }
-                            } else if (num2 >= 3) {
-                                Button() {
-                                    mangas.toggleRecentlyRead(manga)
-                                } label: {
-                                    // Show the image of the manga
-                                    Image("US")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                        .frame(height: 175)
-                                        .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-                                }
-                            }
-                        }
-                    }
-                    .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
-                }
-            }
-        }
-    }
-}
-
 struct MangaWeeklyView: View {
     @State private var selectedFlavor: Flavor = .chocolate
     @State private var suggestedTopping: Topping = .nuts
@@ -86,6 +14,9 @@ struct MangaWeeklyView: View {
     @EnvironmentObject var mangas: Mangas
     
     @Binding var pickedDayOfWeek: Int
+    
+    var m_ImageSizeRank2To3 = 200
+    var m_ImageSizeRank4 = 150
     
     var mangaFilteredArray = [MangaUpdateDay.sunday, MangaUpdateDay.monday, MangaUpdateDay.tuesday, MangaUpdateDay.wednesday, MangaUpdateDay.thursday, MangaUpdateDay.friday, MangaUpdateDay.saturday]
     
@@ -105,8 +36,12 @@ struct MangaWeeklyView: View {
         GridItem(.fixed(100.0))
     ]
     
-    let columnsAdaptive = [
-        GridItem(.adaptive(minimum: 150))
+    let columnsAdaptiveRank2 = [
+        GridItem(.adaptive(minimum: m_ImageSizeRank2To3))
+    ]
+    
+    let columnsAdaptiveRank4 = [
+        GridItem(.adaptive(minimum: m_ImageSizeRank4))
     ]
     
     var gridLayout = [
@@ -121,10 +56,11 @@ struct MangaWeeklyView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                         
-                        //use filter word here
-                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                            ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num, manga in
-                                if (num == 0) {
+                    //use filter word here
+                    LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
+                        ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num, manga in
+                            if (num == 0) {
+                                VStack(alignment: .leading) {
                                     Button() {
                                         mangas.toggleRecentlyRead(manga)
                                     } label: {
@@ -136,10 +72,25 @@ struct MangaWeeklyView: View {
                                             .frame(height: 200)
                                             .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                                     }
-                                    
-                                    LazyVGrid(columns: columnsAdaptive) {
-                                        ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga in
-                                            if (num2 > 0 && num2 < 3) {
+                                
+                                    HStack {
+                                        Image(systemName: "eye")
+                                            .padding([.leading])
+                                        Text("View")
+                                            .foregroundColor(.primary)
+                                    }
+                                    HStack {
+                                        Image(systemName: "house")
+                                            .padding([.leading])
+                                        Text("Comments")
+                                            .foregroundColor(.primary)
+                                    }
+                                }
+                                
+                                LazyVGrid(columns: columnsAdaptiveRank2) {
+                                    ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga in
+                                        if (num2 > 0 && num2 < 3) {
+                                            VStack(alignment: .leading) {
                                                 Button() {
                                                     mangas.toggleRecentlyRead(manga)
                                                 } label: {
@@ -148,10 +99,25 @@ struct MangaWeeklyView: View {
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: 250)
+                                                        .frame(height: m_ImageSizeRank2To3)
                                                         .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                                                 }
-                                            } else if (num2 >= 3) {
+                                            
+                                                HStack {
+                                                    Image(systemName: "eye")
+                                                        .padding([.leading])
+                                                    Text("View")
+                                                        .foregroundColor(.primary)
+                                                }
+                                                HStack {
+                                                    Image(systemName: "house")
+                                                        .padding([.leading])
+                                                    Text("Comments")
+                                                        .foregroundColor(.primary)
+                                                }
+                                            }
+                                        } else if (num2 >= 3) {
+                                            VStack(alignment: .leading) {
                                                 Button() {
                                                     mangas.toggleRecentlyRead(manga)
                                                 } label: {
@@ -160,17 +126,31 @@ struct MangaWeeklyView: View {
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: 175)
+                                                        .frame(height: m_ImageSizeRank4)
                                                         .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                                                }
+                                            
+                                                HStack {
+                                                    Image(systemName: "eye")
+                                                        .padding([.leading])
+                                                    Text("View")
+                                                        .foregroundColor(.primary)
+                                                }
+                                                HStack {
+                                                    Image(systemName: "house")
+                                                        .padding([.leading])
+                                                    Text("Comments")
+                                                        .foregroundColor(.primary)
                                                 }
                                             }
                                         }
                                     }
-                                    .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
                                 }
+                                .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
                             }
                         }
-                        //end of lazyvgrid
+                    }
+                    //end of lazyvgrid
                         
                     
                 }
