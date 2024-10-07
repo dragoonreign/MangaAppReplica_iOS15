@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AutoScrollerView: View {
     var imageNames: [String]
-    let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
+//    let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
 
     //from multiple carousel
 //    private let content: (T) -> Content
@@ -45,8 +45,8 @@ struct AutoScrollerView: View {
             }
             
             // Step 4: Background Color
-            Color.secondary
-                .ignoresSafeArea()
+//            Color.secondary
+//                .ignoresSafeArea()
 
             // Step 5: Create TabView for Carousel
             TabView(selection: $selectedImageIndex) {
@@ -58,13 +58,13 @@ struct AutoScrollerView: View {
                             .resizable()
                             .scaledToFit()
                             .tag(index)
-//                            .frame(width: 350, height: 200)
+                            .frame(maxWidth: .infinity)
                     }
 //                    .background(VisualEffectBlur()) // Step 8: Apply Visual Effect Blur
-                    .shadow(radius: 20) // Step 9: Apply Shadow
+//                    .shadow(radius: 20) // Step 9: Apply Shadow
                 }
             }
-            .frame(height: 300) // Step 10: Set Carousel Height
+            .frame(height: 200) // Step 10: Set Carousel Height
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Step 11: Customize TabView Style
             .ignoresSafeArea()
 //            .gesture(
@@ -93,14 +93,19 @@ struct AutoScrollerView: View {
 //                    }
 //            )
         }
-        .onReceive(timer) { _ in
-            currIndex += 1
-            // Step 16: Auto-Scrolling Logic
-            withAnimation(.default) {
-                selectedImageIndex = (selectedImageIndex + 1) % imageNames.count
-            }
-        }
+        
+        //timer
+//        .onReceive(timer) { _ in
+//            currIndex += 1
+//            // Step 16: Auto-Scrolling Logic
+//            withAnimation(.default) {
+//                selectedImageIndex = (selectedImageIndex + 1) % imageNames.count
+//            }
+//        }
+        
+        
 //     }
+//     geometry reader
     }
 }
 

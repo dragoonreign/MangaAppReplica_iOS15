@@ -13,6 +13,8 @@ struct HomeView: View {
     
     @EnvironmentObject var mangas: Mangas
     
+    @State var pickedDayOfWeek = 1
+    
     var body: some View {
         NavigationView {
             // banner view here
@@ -24,10 +26,6 @@ struct HomeView: View {
                 // initially centered content
                 // ranks from 1 takes up the whole width 2-12 
                 // List(mangalist) // 2-12
-
-                //use array of fitered manga ex) List of monday mangas
-                AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
-//                    .background(.black)
                 
                 VStack {
                     // TEST
@@ -35,8 +33,11 @@ struct HomeView: View {
                     Text("Jump+ manga list")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
-                    MangaWeeklyView()
+                    MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
+                    MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
                 }
+                .background(.black)
+//                .preferredColorScheme(.dark)
                 
                 VStack {
                     // 最近見た
@@ -56,11 +57,44 @@ struct HomeView: View {
                 }
                 
                 VStack {
+                    // TEST
+                    // Replace here with other
+                    Text("Jump+ manga list")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.largeTitle)
+                    MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
+                    MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
+                }
+                .background(.black)
+//                .preferredColorScheme(.dark)
+                
+                //use array of fitered manga ex) List of monday mangas
+                VStack {
+                    Text("Ads")
+                    AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
+    //                    .background(.black)
+                }
+                
+                VStack {
                     // アニメ化作品
                     Text("Recently Animated")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
                     HorizontalMangaSelectionView(filter: .none)
+                }
+                
+                VStack {
+                    // 最新の読切はこちら
+                    Text("Read one shots here")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.largeTitle)
+                    HorizontalMangaSelectionView(filter: .none)
+                }
+                
+                VStack {
+                    Text("Ads")
+                    AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
+    //                    .background(.black)
                 }
                 
 //                VStack {

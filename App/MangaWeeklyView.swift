@@ -85,7 +85,17 @@ struct MangaWeeklyView: View {
     
     @EnvironmentObject var mangas: Mangas
     
+    @Binding var pickedDayOfWeek: Int
+    
     var mangaFilteredArray = [MangaUpdateDay.sunday, MangaUpdateDay.monday, MangaUpdateDay.tuesday, MangaUpdateDay.wednesday, MangaUpdateDay.thursday, MangaUpdateDay.friday, MangaUpdateDay.saturday]
+    
+    var filteredMangaList: [Manga] {
+        return mangas.shelf.filter {
+            $0.mangaUpdateDay == mangaFilteredArray[pickedDayOfWeek]
+        }
+    }
+    
+    //I want array of filtered mangas [monday manga, tuesday manga, ...]
 
     let columnsFlex = [
         GridItem(.flexible(minimum: 100.0))
@@ -104,21 +114,16 @@ struct MangaWeeklyView: View {
     ]
     
     var body: some View {
-        //*calendar is the correct spelling
-        MyCalenderView()
-        
         ScrollView(.vertical, showsIndicators: false) {
             // 最近見た
             
             //filter out the manga by the weekday
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(mangaFilteredArray, id: \.self) { filterWord in
-//                        var filteredMangaList = mangas.shelf.mangaUpdateDay.filter { $0 == filterWord }
                         
                         //use filter word here
                         LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                            ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
+                            ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num, manga in
                                 if (num == 0) {
                                     Button() {
                                         mangas.toggleRecentlyRead(manga)
@@ -133,7 +138,7 @@ struct MangaWeeklyView: View {
                                     }
                                     
                                     LazyVGrid(columns: columnsAdaptive) {
-                                        ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num2, manga in
+                                        ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga in
                                             if (num2 > 0 && num2 < 3) {
                                                 Button() {
                                                     mangas.toggleRecentlyRead(manga)
@@ -167,7 +172,7 @@ struct MangaWeeklyView: View {
                         }
                         //end of lazyvgrid
                         
-                    }
+                    
                 }
             }
 //            MangaListView()
@@ -179,7 +184,7 @@ struct MangaWeeklyView: View {
 
 struct MangaWeeklyView_Previews: PreviewProvider {
     static var previews: some View {
-        MangaWeeklyView()
+        MangaWeeklyView(pickedDayOfWeek: .constant(0))
             .environmentObject(Mangas())
     }
 }
