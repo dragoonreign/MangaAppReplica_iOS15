@@ -32,7 +32,6 @@ struct MangaWeeklyView: View {
     var body: some View {
 //        uncomment here later
 //        MyCalenderView() filter out the manga by the day
-        AutoScroller(imageNames: ["uk", "us", "germany", "italy", "russia", "spain", "estonia"])
         
         // 最近見た
         ScrollView(.vertical, showsIndicators: false) {

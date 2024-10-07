@@ -22,13 +22,17 @@ class Manga: Identifiable, Codable {
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
-    var mangaUpdateDay: MangaUpdateDay = .monday
+//    var mangaUpdateDay: MangaUpdateDay = .monday
+    
+    init() {
+        
+    }
+    
+    //    init (mangaUpdateDay: MangaUpdateDay) {
+    //        self.mangaUpdateDay = mangaUpdateDay
+    //    }
     
     static let example = Manga()
-
-    init (mangaUpdateDay: MangaUpdateDay) {
-        self.mangaUpdateDay = mangaUpdateDay
-    }
 }
 
 
@@ -36,9 +40,11 @@ class Mangas: ObservableObject {
     static let saveKey = "SaveData"
     
     var manga = Manga()
-    var manga2 = Manga(.tuesday)
+    var manga2 = Manga()
+//    var manga2 = Manga(mangaUpdateDay: .tuesday)
     var manga3 = Manga()
-    var manga4 = Manga(.monday)
+    //    var manga4 = Manga(mangaUpdateDay: .monday)
+    var manga4 = Manga()
     @Published private(set) var shelf: [Manga]
     // @Published private(set) var mangaFavorite: [Manga]
     // @Published private(set) var mangaRecent: [Manga]
