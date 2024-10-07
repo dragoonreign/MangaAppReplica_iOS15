@@ -10,11 +10,24 @@ import SwiftUI
 struct AutoScrollerView: View {
     var imageNames: [String]
     let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
+
+    //from multiple carousel
+    private let content: (T) -> Content
+    private let items: [T]
+    private let horizontalSpacing: CGFloat
+    private let trailingSpacing: CGFloat
+
+    @Binding private var index: Int
+    @GestureState private var dragOffset: CGFloat = 0
     
     // Step 3: Manage Selected Image Index
     @State private var selectedImageIndex: Int = 0
 
     var body: some View {
+        // GeometryReader { proxy in
+        //     let pageWidth = (proxy.size.width - (trailingSpacing + horizontalSpacing))
+        //     let currentOffset = dragOffset - (CGFloat(index) * pageWidth)
+        
         ZStack {
             // Step 12: Navigation Dots
             HStack {
@@ -56,6 +69,23 @@ struct AutoScrollerView: View {
             .ignoresSafeArea()
             .gesture(
                 DragGesture()
+                    .updating($dragOffset) { value, state, _ in
+                        if (index == 0 && value.translation.width > 0) || (index == items.count - 1 && value.translation.width < 0) {
+                            state = value.translation.width / 4
+                        } else {
+                            state = value.translation.width
+                        }
+                    }
+                    .onEnded { value in
+                        let dragThreshold = pageWidth / 20
+                        if value.translation.width > dragThreshold {
+                            index -= 1
+                        }
+                        if value.translation.width < -dragThreshold {
+                            index += 1
+                        }
+                        index = max(min(index, items.count - 1), 0)
+                    }
             )
         }
         .onReceive(timer) { _ in
@@ -64,6 +94,7 @@ struct AutoScrollerView: View {
                 selectedImageIndex = (selectedImageIndex + 1) % imageNames.count
             }
         }
+    // }
     }
 }
 
