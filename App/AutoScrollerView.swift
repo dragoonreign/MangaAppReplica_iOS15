@@ -12,21 +12,21 @@ struct AutoScrollerView: View {
     let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
 
     //from multiple carousel
-    private let content: (T) -> Content
-    private let items: [T]
-    private let horizontalSpacing: CGFloat
-    private let trailingSpacing: CGFloat
-
-    @Binding private var index: Int
+//    private let content: (T) -> Content
+//    private let items: [T]
+//    private let horizontalSpacing: CGFloat
+//    private let trailingSpacing: CGFloat
+//
     @GestureState private var dragOffset: CGFloat = 0
     
     // Step 3: Manage Selected Image Index
     @State private var selectedImageIndex: Int = 0
+    @State private var currIndex: Int = 0
 
     var body: some View {
-        // GeometryReader { proxy in
-        //     let pageWidth = (proxy.size.width - (trailingSpacing + horizontalSpacing))
-        //     let currentOffset = dragOffset - (CGFloat(index) * pageWidth)
+//         GeometryReader { proxy in
+//             let pageWidth = (proxy.size.width)
+////             let currentOffset = dragOffset - (CGFloat(index) * pageWidth)
         
         ZStack {
             // Step 12: Navigation Dots
@@ -67,34 +67,40 @@ struct AutoScrollerView: View {
             .frame(height: 300) // Step 10: Set Carousel Height
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Step 11: Customize TabView Style
             .ignoresSafeArea()
-            .gesture(
-                DragGesture()
-                    .updating($dragOffset) { value, state, _ in
-                        if (index == 0 && value.translation.width > 0) || (index == items.count - 1 && value.translation.width < 0) {
-                            state = value.translation.width / 4
-                        } else {
-                            state = value.translation.width
-                        }
-                    }
-                    .onEnded { value in
-                        let dragThreshold = pageWidth / 20
-                        if value.translation.width > dragThreshold {
-                            index -= 1
-                        }
-                        if value.translation.width < -dragThreshold {
-                            index += 1
-                        }
-                        index = max(min(index, items.count - 1), 0)
-                    }
-            )
+//            .gesture(
+//                DragGesture()
+//                    .updating($dragOffset) { value, state, _ in
+//                        if (currIndex == 0 && value.translation.width > 0) || (currIndex == imageNames.count - 1 && value.translation.width < 0) {
+//                            state = value.translation.width / 4
+//                            print("check1, \(currIndex)")
+//                        } else {
+//                            state = value.translation.width
+//                            print("check2, \(currIndex)")
+//                        }
+//                    }
+//                    .onEnded { value in
+//                        let dragThreshold = pageWidth / 20
+//                        if value.translation.width > abs(dragThreshold) {
+//                            currIndex -= 1
+//                            print("check3, \(currIndex)")
+//                        }
+//                        if value.translation.width < abs(dragThreshold) {
+//                            currIndex += 1
+//                            print("check4, \(currIndex)")
+//                        }
+//                        currIndex = max(min(currIndex, imageNames.count - 1), 0)
+//                        print("check5, \(currIndex)")
+//                    }
+//            )
         }
         .onReceive(timer) { _ in
+            currIndex += 1
             // Step 16: Auto-Scrolling Logic
             withAnimation(.default) {
                 selectedImageIndex = (selectedImageIndex + 1) % imageNames.count
             }
         }
-    // }
+//     }
     }
 }
 
