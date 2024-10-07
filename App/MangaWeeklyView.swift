@@ -28,7 +28,7 @@ struct MangaListView: View {
     
     var body: some View {
         
-        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
+        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 1) {
             ForEach(Array(mangas.shelf.enumerated()), id: \.offset) { num, manga in
                 if (num == 0) {
                     Button() {
@@ -54,7 +54,7 @@ struct MangaListView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(minWidth: 0, maxWidth: .infinity)
-                                        .frame(height: 250)
+                                        .frame(height: 200)
                                         .colorMultiply(manga.isRecentlyRead ? .gray : .white)
                                 }
                             } else if (num2 >= 3) {

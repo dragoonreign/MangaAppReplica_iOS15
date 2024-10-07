@@ -40,10 +40,6 @@ struct MyCalenderView: View {
     
     var body: some View {
         VStack {
-            Text("Picked Day of the week: \(pickedDayOfWeek)")
-            
-            Text("\(getDayOfWeek)")
-            
             HStack {
                 ForEach(daysOfWeek.indices, id: \.self) { index in
                     Button {

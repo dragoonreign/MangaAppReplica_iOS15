@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @State private var selectedFlavor: Flavor = .chocolate
+    @State private var suggestedTopping: Topping = .nuts
+    
+    @State var pickedDayOfWeek = 1
+    
     var body: some View {
-        Text("Favorite View")
+        NavigationView {
+            
+            
+            VStack {
+                // TEST
+                // Replace here with other
+                
+                MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
+                MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Picker("Flavor", selection: $selectedFlavor) {
+                        ForEach(Flavor.allCases) { flavor in
+                            Text(flavor.rawValue.capitalized)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+        }
     }
 }
 
