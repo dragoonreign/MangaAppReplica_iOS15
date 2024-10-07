@@ -24,6 +24,8 @@ struct HomeView: View {
                 // initially centered content
                 // ranks from 1 takes up the whole width 2-12 
                 // List(mangalist) // 2-12
+
+                //use array of fitered manga ex) List of monday mangas
                 AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
                 
                 VStack {
