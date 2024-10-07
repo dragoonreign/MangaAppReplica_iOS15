@@ -33,6 +33,7 @@ struct MangaWeeklyView: View {
         // 最近見た
         ScrollView(.vertical, showsIndicators: false) {
             //filter out the manga by the day
+            //*calendar is the correct spelling
             MyCalenderView()
             
             LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
