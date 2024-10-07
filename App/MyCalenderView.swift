@@ -53,7 +53,7 @@ struct MyCalenderView: View {
                         if (getDayOfWeek == index) {
                             Text(daysOfWeek[index])
                                 .fontWeight(.black)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(.black)
                                 .frame(maxWidth: .infinity)
                                 .background(
                                     Circle()
