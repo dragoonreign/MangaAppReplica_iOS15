@@ -12,7 +12,7 @@ enum MangaUpdateDay: Codable {
     case monday, tuesday, wednesday, thursday, friday, saturday, sunday
 }
 
-class Manga: Identifiable, Codable {
+class Manga: ObservableObject, Identifiable, Codable {
     var id = UUID()
     var isbn: Int = 0
     var title: String = "Manga Title"
@@ -37,6 +37,8 @@ class Manga: Identifiable, Codable {
     //    }
     
     static let example = Manga()
+    
+    
 }
 
 

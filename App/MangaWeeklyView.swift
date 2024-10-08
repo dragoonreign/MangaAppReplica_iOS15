@@ -58,8 +58,10 @@ struct MangaWeeklyView: View {
                         ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num, manga in
                             if (num == 0) {
                                 VStack(alignment: .leading) {
-                                    Button() {
-                                        mangas.toggleRecentlyRead(manga)
+//                                    Button() {
+                                    NavigationLink() {
+                                        MangaDetailView(manga: manga)
+//                                        mangas.toggleRecentlyRead(manga)
                                     } label: {
                                         // Show the image of the manga
                                         Image("US")
@@ -68,6 +70,9 @@ struct MangaWeeklyView: View {
                                             .frame(minWidth: 0, maxWidth: .infinity)
                                             .frame(height: 200)
                                             .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                                    }
+                                    .onTapGesture {
+                                        mangas.toggleRecentlyRead(manga)
                                     }
                                 
                                     HStack {
@@ -88,8 +93,9 @@ struct MangaWeeklyView: View {
                                     ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga2 in
                                         if (num2 > 0 && num2 < 3) {
                                             VStack(alignment: .leading) {
-                                                Button() {
-                                                    mangas.toggleRecentlyRead(manga2)
+                                                NavigationLink() {
+                                                    MangaDetailView(manga: manga)
+//                                                    mangas.toggleRecentlyRead(manga2)
                                                 } label: {
                                                     // Show the image of the manga
                                                     Image("US")
@@ -115,8 +121,10 @@ struct MangaWeeklyView: View {
                                             }
                                         } else if (num2 >= 3) {
                                             VStack(alignment: .leading) {
-                                                Button() {
-                                                    mangas.toggleRecentlyRead(manga2)
+//                                                Button() {
+                                                NavigationLink() {
+                                                    MangaDetailView(manga: manga)
+//                                                    mangas.toggleRecentlyRead(manga2)
                                                 } label: {
                                                     // Show the image of the manga
                                                     Image("US")
