@@ -78,7 +78,7 @@ struct MangaWeeklyView: View {
                                             .padding([.leading])
                                         Text("View")
                                             .foregroundColor(.primary)
-                                        Text(manga.totalViews)
+                                        Text("\(manga.totalViews)")
                                             .foregroundColor(.primary)
                                     }
                                     HStack {
@@ -86,13 +86,13 @@ struct MangaWeeklyView: View {
                                             .padding([.leading])
                                         Text("Comments")
                                             .foregroundColor(.primary)
-                                        Text(manga.totalComments)
+                                        Text("\(manga.totalComments)")
                                             .foregroundColor(.primary)
                                     }
                                 }
                                 
                                 LazyVGrid(columns: columnsAdaptiveRank2) {
-                                    ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga in
+                                    ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga2 in
                                         if (num2 > 0 && num2 < 3) {
                                             VStack(alignment: .leading) {
                                                 Button() {
@@ -112,7 +112,7 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("View")
                                                         .foregroundColor(.primary)
-                                                    Text(manga.totalViews)
+                                                    Text("\(manga.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
@@ -120,7 +120,7 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("Comments")
                                                         .foregroundColor(.primary)
-                                                    Text(manga.totalComments)
+                                                    Text("\(manga.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
                                             }
@@ -143,7 +143,7 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("View")
                                                         .foregroundColor(.primary)
-                                                    Text(manga.totalViews)
+                                                    Text("\(manga.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
@@ -151,7 +151,7 @@ struct MangaWeeklyView: View {
                                                         .padding([.leading])
                                                     Text("Comments")
                                                         .foregroundColor(.primary)
-                                                    Text(manga.totalComments)
+                                                    Text("\(manga.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
                                             }

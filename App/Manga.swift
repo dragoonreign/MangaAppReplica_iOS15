@@ -48,9 +48,6 @@ class Mangas: ObservableObject {
     //    var manga4 = Manga(mangaUpdateDay: .monday)
     var manga4 = Manga()
     @Published private(set) var shelf: [Manga]
-    // @Published private(set) var mangaFavorite: [Manga]
-    // @Published private(set) var mangaRecent: [Manga]
-    // @Published private(set) var mangaDict<"String", Manga>: [:]
     
     init() {
         shelf = []
@@ -58,13 +55,6 @@ class Mangas: ObservableObject {
         shelf.append(manga2)
         shelf.append(manga3)
         shelf.append(manga4)
-//        mangaFavorite = []
-//        mangaRecent = []
-//        mangaDict = [
-//            "shelves" : shelf,
-//            "favorites" : mangaFavorite,
-//            "recents" : mangaRecent,
-//        ]
         
         if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
