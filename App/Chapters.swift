@@ -1,32 +1,31 @@
 //
-//  Manga.swift
+//  Chapters.swift
 //  Project20(MangaAppReplica)
 //
-//  Created by Jun on 10/4/24.
+//  Created by Jun on 10/8/24.
 //
 
 import Foundation
 import SwiftUI
 
-enum MangaUpdateDay: Codable {
-    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
-}
-
-class Manga: Identifiable, Codable {
-    var id = UUID()
-    var isbn: Int = 0
-    var title: String = "Manga Title"
-    var author: String = "Manga Author"
-    var url: String = "Manga URL"
-    var isFavorite: Bool = false
-    var isRecentlyRead: Bool = false
-    var isUpdated: Bool = false
-    var mangaUpdateDay: MangaUpdateDay = .monday
+class Chapter: Identifiable, Codable {
+    var isbn: Int = 0             //identifiable
+    var totalChapters: Int = 10   //HARD CODED VALUE FOR TESTING PURPOSE
+    var url: String = "Manga URL" //shonenjumpplus.com/episode/[NUMBER HERE]
     var totalViews: Int = 100
     var totalComments: Int = 250
     
-    //    var images = [Image]()
-    //    var shelf: Int = 10                     //total number of manga HARD CODED VALUE FOR TESTING PURPOSE
+    //------DONT KNOW IF THESE ARE NEEDED---------
+//    var id = UUID()
+//    var images = [Image]() seems like the manga app is using url
+//    var shelf: Int = 10
+//    var title: String = "Manga Title"
+//    var author: String = "Manga Author"
+//    var isFavorite: Bool = false
+//    var isRecentlyRead: Bool = false
+//    var isUpdated: Bool = false
+//    var mangaUpdateDay: MangaUpdateDay = .monday
+    //--------------------------------------------
     
     init() {
         
@@ -36,38 +35,35 @@ class Manga: Identifiable, Codable {
     //        self.mangaUpdateDay = mangaUpdateDay
     //    }
     
-    static let example = Manga()
+    static let example = Chapter()
 }
 
-
-class Mangas: ObservableObject {
+class Chapters: ObservableObject {
     static let saveKey = "SaveData"
     
-    var manga = Manga()
-    var manga2 = Manga()
-//    var manga2 = Manga(mangaUpdateDay: .tuesday)
-    var manga3 = Manga()
-    //    var manga4 = Manga(mangaUpdateDay: .monday)
-    var manga4 = Manga()
-    @Published private(set) var shelf: [Manga]
+    var chapter = Chapter()
+    var chapter2 = Chapter()
+    var chapter3 = Chapter()
+    var chapter4 = Chapter()
+    @Published private(set) var shelf: [Chapter] //should've used collection instead of shelf
     
     init() {
         shelf = []
-        shelf.append(manga)
-        shelf.append(manga2)
-        shelf.append(manga3)
-        shelf.append(manga4)
+        shelf.append(chapter)
+        shelf.append(chapter2)
+        shelf.append(chapter3)
+        shelf.append(chapter4)
         
         if let data = loadFile() {
-            if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
+            if let decoded = try? JSONDecoder().decode([Chapter].self, from: data) {
                 shelf = decoded
                 return
             }
         }
     }
     
-    func addshelf(_ manga: Manga) {
-        shelf.append(manga)
+    func addshelf(_ chaper: Chapter) {
+        shelf.append(chapter)
         save()
     }
     
@@ -81,17 +77,17 @@ class Mangas: ObservableObject {
 //       save()
 //    }
 
-    func toggleFavorite(_ manga: Manga) {
-        objectWillChange.send()
-        manga.isFavorite.toggle()
-        save()
-    }
-    
-    func toggleRecentlyRead(_ manga: Manga) {
-        objectWillChange.send()
-        manga.isRecentlyRead.toggle()
-        save()
-    }
+//    func toggleFavorite(_ chapter: Chapter) {
+//        objectWillChange.send()
+//        chapter.isFavorite.toggle()
+//        save()
+//    }
+//
+//    func toggleRecentlyRead(_ chapter: Chapter) {
+//        objectWillChange.send()
+//        chapter.isRecentlyRead.toggle()
+//        save()
+//    }
     
     private func save() {
         if let encoded = try? JSONEncoder().encode(shelf) {
