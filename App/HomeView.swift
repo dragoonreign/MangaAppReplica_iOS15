@@ -10,9 +10,6 @@ import SwiftUI
 //let navBarAppearance = UINavigationBarAppearance()
 
 struct HomeView: View {
-    @State private var selectedFlavor: Flavor = .chocolate
-    @State private var suggestedTopping: Topping = .nuts
-    
     @EnvironmentObject var mangas: Mangas
     
     @State var pickedDayOfWeek = 1
@@ -20,7 +17,7 @@ struct HomeView: View {
 //    init() {
 //        navBarAppearance.configureWithOpaqueBackground()
 //        navBarAppearance.backgroundColor = .red
-//        
+//
 //        UINavigationBar.appearance().standardAppearance = navBarAppearance
 //        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
 //    }

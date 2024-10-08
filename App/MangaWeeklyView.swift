@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct MangaWeeklyView: View {
-    @State private var selectedFlavor: Flavor = .chocolate
-    @State private var suggestedTopping: Topping = .nuts
-    
     @EnvironmentObject var mangas: Mangas
     
     @Binding var pickedDayOfWeek: Int
@@ -92,7 +89,7 @@ struct MangaWeeklyView: View {
                                         if (num2 > 0 && num2 < 3) {
                                             VStack(alignment: .leading) {
                                                 Button() {
-                                                    mangas.toggleRecentlyRead(manga)
+                                                    mangas.toggleRecentlyRead(manga2)
                                                 } label: {
                                                     // Show the image of the manga
                                                     Image("US")
@@ -100,26 +97,26 @@ struct MangaWeeklyView: View {
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
                                                         .frame(height: 100)
-                                                        .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                                                        .colorMultiply(manga2.isRecentlyRead ? .gray : .white)
                                                 }
                                             
                                                 HStack {
                                                     Image(systemName: "eye")
                                                         .padding([.leading])
-                                                    Text("\(manga.totalViews)")
+                                                    Text("\(manga2.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
                                                     Image(systemName: "message")
                                                         .padding([.leading])
-                                                    Text("\(manga.totalComments)")
+                                                    Text("\(manga2.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
                                             }
                                         } else if (num2 >= 3) {
                                             VStack(alignment: .leading) {
                                                 Button() {
-                                                    mangas.toggleRecentlyRead(manga)
+                                                    mangas.toggleRecentlyRead(manga2)
                                                 } label: {
                                                     // Show the image of the manga
                                                     Image("US")
@@ -127,19 +124,19 @@ struct MangaWeeklyView: View {
                                                         .scaledToFit()
                                                         .frame(minWidth: 0, maxWidth: .infinity)
                                                         .frame(height: 100)
-                                                        .colorMultiply(manga.isRecentlyRead ? .gray : .white)
+                                                        .colorMultiply(manga2.isRecentlyRead ? .gray : .white)
                                                 }
                                             
                                                 HStack {
                                                     Image(systemName: "eye")
                                                         .padding([.leading])
-                                                    Text("\(manga.totalViews)")
+                                                    Text("\(manga2.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
                                                     Image(systemName: "message")
                                                         .padding([.leading])
-                                                    Text("\(manga.totalComments)")
+                                                    Text("\(manga2.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
                                             }

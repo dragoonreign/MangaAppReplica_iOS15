@@ -9,22 +9,22 @@ import SwiftUI
 
 
 
-enum Topping: String, CaseIterable, Identifiable {
-    case nuts, cookies, blueberries
-    var id: Self { self }
-}
+//enum Topping: String, CaseIterable, Identifiable {
+//    case nuts, cookies, blueberries
+//    var id: Self { self }
+//}
 
 enum Flavor: String, CaseIterable, Identifiable {
-    case chocolate, vanilla, strawberry
+    case none, recent, favorite
     var id: Self { self }
 }
 
 extension Flavor {
-    var suggestedTopping: Topping {
+    var suggestedFilter: FilterType {
         switch self {
-        case .chocolate: return .nuts
-        case .vanilla: return .cookies
-        case .strawberry: return .blueberries
+        case .none: return .none
+        case .recent: return .recentlyRead
+        case .favorite: return .favorites
         }
     }
 }

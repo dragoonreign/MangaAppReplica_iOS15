@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @State private var selectedFlavor: Flavor = .chocolate
-    @State private var suggestedTopping: Topping = .nuts
+    @State private var selectedFlavor: Flavor = .none
     
     @State var pickedDayOfWeek = 1
     

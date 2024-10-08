@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct AccountView: View {
+    @State private var selectedFlavor: Flavor = .none
+    
     var body: some View {
-        Text("Account View")
+        NavigationView {
+    //        Text("Account View")
+            HStack {
+                VerticalMangaSelectionView(filter: selectedFlavor.suggestedFilter)
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Picker("Flavor", selection: $selectedFlavor) {
+                        ForEach(Flavor.allCases) { flavor in
+                            Text(flavor.rawValue.capitalized)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+        }
     }
 }
 
