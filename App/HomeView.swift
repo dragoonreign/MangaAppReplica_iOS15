@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//let navBarAppearance = UINavigationBarAppearance()
+
 struct HomeView: View {
     @State private var selectedFlavor: Flavor = .chocolate
     @State private var suggestedTopping: Topping = .nuts
@@ -14,6 +16,14 @@ struct HomeView: View {
     @EnvironmentObject var mangas: Mangas
     
     @State var pickedDayOfWeek = 1
+    
+//    init() {
+//        navBarAppearance.configureWithOpaqueBackground()
+//        navBarAppearance.backgroundColor = .red
+//        
+//        UINavigationBar.appearance().standardAppearance = navBarAppearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+//    }
     
     var body: some View {
         NavigationView {
@@ -116,6 +126,26 @@ struct HomeView: View {
 //            .defaultScrollAnchor(.center)
 //            .background(.primary)
 //            .preferredColorScheme(.dark)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("US")
+                        .ignoresSafeArea()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.red)
+//                    List(){
+//
+//                    }
+//                    .toolbarBack
+//                        .resizable()
+//                        .scaledToFit()
+//                    Picker("Flavor", selection: $selectedFlavor) {
+//                        ForEach(Flavor.allCases) { flavor in
+//                            Text(flavor.rawValue.capitalized)
+//                        }
+//                    }
+//                    .pickerStyle(.segmented)
+                }
+            }
         }
     }
 }

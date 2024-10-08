@@ -76,16 +76,12 @@ struct MangaWeeklyView: View {
                                     HStack {
                                         Image(systemName: "eye")
                                             .padding([.leading])
-                                        Text("View")
-                                            .foregroundColor(.primary)
                                         Text("\(manga.totalViews)")
                                             .foregroundColor(.primary)
                                     }
                                     HStack {
-                                        Image(systemName: "house")
+                                        Image(systemName: "message")
                                             .padding([.leading])
-                                        Text("Comments")
-                                            .foregroundColor(.primary)
                                         Text("\(manga.totalComments)")
                                             .foregroundColor(.primary)
                                     }
@@ -110,16 +106,12 @@ struct MangaWeeklyView: View {
                                                 HStack {
                                                     Image(systemName: "eye")
                                                         .padding([.leading])
-                                                    Text("View")
-                                                        .foregroundColor(.primary)
                                                     Text("\(manga.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
-                                                    Image(systemName: "house")
+                                                    Image(systemName: "message")
                                                         .padding([.leading])
-                                                    Text("Comments")
-                                                        .foregroundColor(.primary)
                                                     Text("\(manga.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
@@ -141,16 +133,12 @@ struct MangaWeeklyView: View {
                                                 HStack {
                                                     Image(systemName: "eye")
                                                         .padding([.leading])
-                                                    Text("View")
-                                                        .foregroundColor(.primary)
                                                     Text("\(manga.totalViews)")
                                                         .foregroundColor(.primary)
                                                 }
                                                 HStack {
-                                                    Image(systemName: "house")
+                                                    Image(systemName: "message")
                                                         .padding([.leading])
-                                                    Text("Comments")
-                                                        .foregroundColor(.primary)
                                                     Text("\(manga.totalComments)")
                                                         .foregroundColor(.primary)
                                                 }
