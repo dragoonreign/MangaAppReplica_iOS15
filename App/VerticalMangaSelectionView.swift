@@ -76,22 +76,70 @@ struct VerticalMangaSelectionView: View {
                             print("recently read")
                         } label: {
                             // Show the image of the manga
-                            Image("UK")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: .infinity)
-                                .frame(maxHeight: 50)
+                            HStack {
+                                Image("UK")
+//                                    .padding([.leading])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: .infinity)
+                                    .frame(maxHeight: 50)
+                                
+                                VStack {
+                                    Text("\(manga.title)")
+//                                        .padding([.leading])
+                                    Text("\(manga.author)")
+//                                        .padding([.leading])
+                                }
+                                
+                                VStack {
+                                    Image(systemName: "eye")
+//                                        .padding([.leading])
+                                    Image(systemName: "message")
+//                                        .padding([.leading])
+                                }
+                                
+                                VStack {
+                                    Text("\(manga.totalViews)")
+//                                        .padding([.leading])
+                                    Text("\(manga.totalComments)")
+//                                        .padding([.leading])
+                                }
+                            }
                         }
                     } else if (filter == .favorites) {
                         Button() {
                             print("favorite")
                         } label: {
                             // Show the image of the manga
-                            Image("Italy")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: .infinity)
-                                .frame(maxHeight: 50)
+                            HStack {
+                                Image("Italy")
+//                                    .padding([.leading])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: .infinity)
+                                    .frame(maxHeight: 50)
+                                
+                                VStack {
+                                    Text("\(manga.title)")
+//                                        .padding([.leading])
+                                    Text("\(manga.author)")
+//                                        .padding([.leading])
+                                }
+                                
+                                VStack {
+                                    Image(systemName: "eye")
+//                                        .padding([.leading])
+                                    Image(systemName: "message")
+//                                        .padding([.leading])
+                                }
+                                
+                                VStack {
+                                    Text("\(manga.totalViews)")
+//                                        .padding([.leading])
+                                    Text("\(manga.totalComments)")
+//                                        .padding([.leading])
+                                }
+                            }
                         }
                     }
                 }
