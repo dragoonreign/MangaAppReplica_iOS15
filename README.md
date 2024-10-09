@@ -1,6 +1,11 @@
 MangaReplicaApp
 
-My most recent app I built and released on the App Store. I created this app out of personal need. I have SO MANY random app ideas and wanted a place I could easily keep track of them. AppIdeasApp lets you create app ideas, brainstorm everything from name ideas, feature ideas, color schemes, and more. Less forgetting. More building. More shipping. I wanted to challenge my design skills on this project and had fun adding some animations (all with SwiftUI of course!)
+iOS version: 15
+Xcode: 13.X
+Language: SwiftUI
+
+To practice SwiftUI, this project is my first attempt to recreate a live Manga service app from a scratch. 
+This app uses JSON coadable data with classes Manga and Chapter.
 
 <p align="center">
   <img width="460" height="300" src="https://picsum.photos/460/300">
