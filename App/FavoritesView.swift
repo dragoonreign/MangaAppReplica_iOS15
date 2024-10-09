@@ -22,16 +22,16 @@ struct FavoritesView: View {
                 MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                 MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Picker("Flavor", selection: $selectedFlavor) {
-                        ForEach(Flavor.allCases) { flavor in
-                            Text(flavor.rawValue.capitalized)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
-            }
+            // .toolbar {
+            //     ToolbarItem(placement: .principal) {
+            //         Picker("Flavor", selection: $selectedFlavor) {
+            //             ForEach(Flavor.allCases) { flavor in
+            //                 Text(flavor.rawValue.capitalized)
+            //             }
+            //         }
+            //         .pickerStyle(.segmented)
+            //     }
+            // }
         }
     }
 }
