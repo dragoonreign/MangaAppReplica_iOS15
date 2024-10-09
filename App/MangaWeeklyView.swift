@@ -52,118 +52,24 @@ struct MangaWeeklyView: View {
             //filter out the manga by the weekday
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                        
                     //use filter word here
                     LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                        ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num, manga in
-                            if (num == 0) {
-                                VStack(alignment: .leading) {
-//                                    Button() {
-                                    NavigationLink() {
-                                        MangaDetailView(manga: manga)
-                                            .onAppear {
-                                                mangas.toggleRecentlyRead(manga)
-                                            }
-                                    } label: {
-                                        // Show the image of the manga
-                                        Image("US")
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(minWidth: 0, maxWidth: .infinity)
-                                            .frame(height: 200)
-                                            .colorMultiply(manga.isRecentlyRead ? .gray : .white)
-                                    }
-//                                    .onTapGesture {
-//                                        mangas.toggleRecentlyRead(manga)
-//                                    }
-                                
-                                    HStack {
-                                        Image(systemName: "eye")
-                                            .padding([.leading])
-                                        Text("\(manga.totalViews)")
-                                            .foregroundColor(.primary)
-                                    }
-                                    HStack {
-                                        Image(systemName: "message")
-                                            .padding([.leading])
-                                        Text("\(manga.totalComments)")
-                                            .foregroundColor(.primary)
+                        VStack(alignment: .leading) {
+                            MyWeeklyItemView(manga: filteredMangaList[0], widthInt: 0, heightInt: 200)
+                        }
+                        LazyVGrid(columns: columnsAdaptiveRank2) {
+                            ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga2 in
+                                if (num2 > 0 && num2 < 3) {
+                                    MyWeeklyItemView(manga: manga2, widthInt: 0, heightInt: 100)
+                                } else if (num2 >= 3) {
+                                    VStack(alignment: .leading) {
+                                        MyWeeklyItemView(manga: manga2, widthInt: 0, heightInt: 100)
                                     }
                                 }
-                                
-                                LazyVGrid(columns: columnsAdaptiveRank2) {
-                                    ForEach(Array(filteredMangaList.enumerated()), id: \.offset) { num2, manga2 in
-                                        if (num2 > 0 && num2 < 3) {
-                                            VStack(alignment: .leading) {
-                                                NavigationLink() {
-                                                    MangaDetailView(manga: manga2)
-                                                        .onAppear {
-                                                            mangas.toggleRecentlyRead(manga2)
-                                                        }
-                                                } label: {
-                                                    // Show the image of the manga
-                                                    Image("US")
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: 100)
-                                                        .colorMultiply(manga2.isRecentlyRead ? .gray : .white)
-                                                }
-                                            
-                                                HStack {
-                                                    Image(systemName: "eye")
-                                                        .padding([.leading])
-                                                    Text("\(manga2.totalViews)")
-                                                        .foregroundColor(.primary)
-                                                }
-                                                HStack {
-                                                    Image(systemName: "message")
-                                                        .padding([.leading])
-                                                    Text("\(manga2.totalComments)")
-                                                        .foregroundColor(.primary)
-                                                }
-                                            }
-                                        } else if (num2 >= 3) {
-                                            VStack(alignment: .leading) {
-//                                                Button() {
-                                                NavigationLink() {
-                                                    MangaDetailView(manga: manga2)
-                                                        .onAppear {
-                                                            mangas.toggleRecentlyRead(manga2)
-                                                        }
-                                                } label: {
-                                                    // Show the image of the manga
-                                                    Image("US")
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                                        .frame(height: 100)
-                                                        .colorMultiply(manga2.isRecentlyRead ? .gray : .white)
-                                                }
-                                            
-                                                HStack {
-                                                    Image(systemName: "eye")
-                                                        .padding([.leading])
-                                                    Text("\(manga2.totalViews)")
-                                                        .foregroundColor(.primary)
-                                                }
-                                                HStack {
-                                                    Image(systemName: "message")
-                                                        .padding([.leading])
-                                                    Text("\(manga2.totalComments)")
-                                                        .foregroundColor(.primary)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
                             }
                         }
+                        .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
                     }
-                    //end of lazyvgrid
-                        
-                    
                 }
             }
 //            MangaListView()

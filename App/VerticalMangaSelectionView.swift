@@ -35,112 +35,12 @@ struct VerticalMangaSelectionView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 List(filteredMangas) { manga in
-//                    Text("\(manga.author)")
                     if (filter == .none) {
-                        Button() {
-                            mangas.toggleRecentlyRead(manga)
-                        } label: {
-                            // Show the image of the manga
-                            HStack {
-                                Image("US")
-//                                    .padding([.leading])
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: .infinity)
-                                    .frame(maxHeight: 50)
-                                
-                                VStack {
-                                    Text("\(manga.title)")
-//                                        .padding([.leading])
-                                    Text("\(manga.author)")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Image(systemName: "eye")
-//                                        .padding([.leading])
-                                    Image(systemName: "message")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Text("\(manga.totalViews)")
-//                                        .padding([.leading])
-                                    Text("\(manga.totalComments)")
-//                                        .padding([.leading])
-                                }
-                            }
-                        }
+                        MyListItemView(manga: manga)
                     } else if (filter == .recentlyRead) {
-                        Button() {
-                            print("recently read")
-                        } label: {
-                            // Show the image of the manga
-                            HStack {
-                                Image("UK")
-//                                    .padding([.leading])
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: .infinity)
-                                    .frame(maxHeight: 50)
-                                
-                                VStack {
-                                    Text("\(manga.title)")
-//                                        .padding([.leading])
-                                    Text("\(manga.author)")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Image(systemName: "eye")
-//                                        .padding([.leading])
-                                    Image(systemName: "message")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Text("\(manga.totalViews)")
-//                                        .padding([.leading])
-                                    Text("\(manga.totalComments)")
-//                                        .padding([.leading])
-                                }
-                            }
-                        }
+                        MyListItemView(manga: manga)
                     } else if (filter == .favorites) {
-                        Button() {
-                            print("favorite")
-                        } label: {
-                            // Show the image of the manga
-                            HStack {
-                                Image("Italy")
-//                                    .padding([.leading])
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: .infinity)
-                                    .frame(maxHeight: 50)
-                                
-                                VStack {
-                                    Text("\(manga.title)")
-//                                        .padding([.leading])
-                                    Text("\(manga.author)")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Image(systemName: "eye")
-//                                        .padding([.leading])
-                                    Image(systemName: "message")
-//                                        .padding([.leading])
-                                }
-                                
-                                VStack {
-                                    Text("\(manga.totalViews)")
-//                                        .padding([.leading])
-                                    Text("\(manga.totalComments)")
-//                                        .padding([.leading])
-                                }
-                            }
-                        }
+                        MyListItemView(manga: manga)
                     }
                 }
                 .frame(minHeight: minRowHeight * CGFloat(filteredMangas.count + 2))
