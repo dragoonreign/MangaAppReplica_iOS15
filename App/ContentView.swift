@@ -38,7 +38,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-                .badge(2)
+                .badge(2)             //testing purpose no logic implemented
                 .colorScheme(.dark)
         
             FavoritesView()
@@ -51,7 +51,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Account", systemImage: "person.crop.circle.fill")
                 }
-                .badge("!")
+                .badge("!")           //testing purpose
                 .colorScheme(.light)
         }
         .environmentObject(mangas)

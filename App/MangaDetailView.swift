@@ -88,6 +88,7 @@ struct MangaDetailView: View {
 //        .onAppear {
 //            mangas.toggleRecentlyRead(manga)
 //        }
+        //if this was ios 16 toolbar { hidetoolbar }
     }
 }
 
