@@ -21,7 +21,8 @@ Below is a showcase of my application in video format.
 https://github.com/user-attachments/assets/4d8480eb-96e6-41b9-a1f3-2b46636b8afc
 
 <p align="center">
-  <img width="250" height="400" src="https://picsum.photos/460/300">
-  <img width="250" height="400" src="https://picsum.photos/460/300">
-  <img width="250" height="400" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/App/Assets.xcassets/US.imageset/US%402x.png?raw=true">
+  <img width="250" height="400" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS1.png">
+  <img width="250" height="400" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS2.png">
+  <img width="250" height="400" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS3.png?raw=true">
+  <img width="250" height="400" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS4.png?raw=true">
 </p>
