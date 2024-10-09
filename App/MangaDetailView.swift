@@ -29,12 +29,12 @@ struct MangaDetailView: View {
                         mangas.toggleFavorite(manga)
                     } label: {
                         if (manga.isFavorite) {
-                            Image(systemName: "star")
+                            Image(systemName: "star.fill")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 30, height:30)
                         } else {
-                            Image(systemName: "star.fill")
+                            Image(systemName: "star")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 30, height:30)
