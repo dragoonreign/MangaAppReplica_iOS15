@@ -34,7 +34,7 @@ Favorite (or weekday list): displays a list of mangas updated in a certain weekd
 
 <h1> Account </h1>
 
-Account: This shows user their most recenlty viewed and favorite manga.
+Account shows user their most recenlty viewed and favorite manga (third option is for testing/debugging purpose).
 
 <p align="left">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS3.png?raw=true">
