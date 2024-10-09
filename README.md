@@ -4,12 +4,12 @@ iOS version: 15,
 Xcode: 13.X,
 Language: SwiftUI
 
+My first attempt to recreate a live service app from a scratch. 
+This app uses JSON coadable data with classes Manga and Chapter with multiple view components.
+
 Showcase:
 
 https://github.com/user-attachments/assets/4d8480eb-96e6-41b9-a1f3-2b46636b8afc
-
-My first attempt to recreate a live service app from a scratch. 
-This app uses JSON coadable data with classes Manga and Chapter with multiple view components.
 
 There are three main view from Content: Home, Favorite, and Account.
 
