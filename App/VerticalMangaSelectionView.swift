@@ -43,7 +43,7 @@ struct VerticalMangaSelectionView: View {
                         MyListItemView(manga: manga)
                     }
                 }
-                .frame(minHeight: minRowHeight * CGFloat(filteredMangas.count + 2))
+                .frame(minHeight: minRowHeight * CGFloat(filteredMangas.count + 3))
             }
         }
         

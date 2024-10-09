@@ -82,7 +82,7 @@ struct MangaDetailView: View {
                         }
                     }
                 }
-                .frame(minHeight: minRowHeight * CGFloat(20))
+                .frame(minHeight: minRowHeight * CGFloat(mangas.shelf.count + 2))
             }
         }
 //        .onAppear {
