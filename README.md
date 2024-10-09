@@ -11,7 +11,7 @@ There are three main view from Content: Home, Favorite, and Account.
 
 Home view is where all the manga is listed and it shows you from the top: a weekday view, ads, recently viewed and more.
 
-Favorite (bad naming it was supposed to be weekday list): displays a list of weekday updated mangas. A user can select weekday from the top navbar.
+Favorite (bad naming it was supposed to be weekday list): displays a list of weekday updated mangas. A user can select weekday from the top navigation bar where its displaying a first letter of the weekday.
 
 Account: This shows user their most recenlty viewed and favorite manga.
 
