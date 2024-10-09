@@ -5,7 +5,7 @@ Xcode: 13.X,
 Language: SwiftUI
 
 My first attempt to recreate a live service app from a scratch. 
-This app uses JSON coadable data with classes Manga and Chapter with multiple view components.
+This app uses JSON coadable data of classes Manga and Chapter usef for multiple view components.
 
 <h1>Showcase:</h1>
 
