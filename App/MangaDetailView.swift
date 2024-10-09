@@ -85,6 +85,9 @@ struct MangaDetailView: View {
                 .frame(minHeight: minRowHeight * CGFloat(20))
             }
         }
+//        .onAppear {
+//            mangas.toggleRecentlyRead(manga)
+//        }
     }
 }
 
