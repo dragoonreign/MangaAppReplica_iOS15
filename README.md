@@ -5,7 +5,7 @@ Xcode: 13.X,
 Language: SwiftUI
 
 To practice SwiftUI, this is my first attempt to recreate a live service app from a scratch. 
-This app uses JSON coadable data with classes Manga and Chapter with multiple views intended to operate like components.
+This app uses JSON coadable data with classes Manga and Chapter with multiple views components.
 
 <p align="center">
   <img width="250" height="300" src="https://picsum.photos/460/300">
