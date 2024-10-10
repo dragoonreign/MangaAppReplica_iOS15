@@ -46,6 +46,6 @@ Account shows user their most recenlty viewed and favorite manga (third option i
 
 <h1> Credit </h1>
 
-I do not own any of the placeholder flag images, and I have borrowed these image from below url link. 
+I do not own any of the placeholder flag images, and borrowed from the url link below . 
 
 Images URL: https://github.com/twostraws/HackingWithSwift/tree/main/SwiftUI/project2-files
