@@ -1,5 +1,7 @@
 <h1>MangaReplicaApp</h1>
 
+Total time spent: ~1 week
+
 iOS version: 15,
 Xcode: 13.X,
 Language: SwiftUI
