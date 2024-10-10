@@ -19,7 +19,7 @@ There are three main view from Content: Home, Favorite, and Account.
 
 <h1> Home </h1>
 
-Home view is where all the manga is listed and it shows you from the top: a weekday view, ads, recently viewed and more.
+Home view is where all the manga is listed and it shows users different sections starting from the top: a weekday view, ads, recently viewed and more.
 
 The image on the right is a detail view and the star represent favorite, where users have an option to favorite a manga.
 
