@@ -44,3 +44,8 @@ Account shows user their most recenlty viewed and favorite manga (third option i
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS3.png?raw=true">
 </p>
 
+<h1> Credit </h1>
+
+I do not own any flag images. 
+
+Images URL: https://github.com/twostraws/HackingWithSwift/tree/main/SwiftUI/project2-files
