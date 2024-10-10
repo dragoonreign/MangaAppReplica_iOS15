@@ -19,6 +19,8 @@ There are three main view from Content: Home, Favorite, and Account.
 
 Home view is where all the manga is listed and it shows you from the top: a weekday view, ads, recently viewed and more.
 
+The image on the right is a detail view and the star represent favorite, where users have an option to choose to favorite a manga.
+
 <p align="left">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS1.png">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/MangaAppSS2.png">
