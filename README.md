@@ -4,7 +4,7 @@ iOS version: 15,
 Xcode: 13.X,
 Language: SwiftUI
 
-My first attempt to recreate a live service app from a scratch. 
+My first attempt to recreate a live service app from scratch. 
 The app uses JSON-codable data for manga and chapter classes in multiple view components.
 
 <h1>Showcase:</h1>
