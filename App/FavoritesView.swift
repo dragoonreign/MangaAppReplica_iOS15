@@ -10,30 +10,7 @@ import SwiftUI
 struct FavoritesView: View {
     @State private var selectedFlavor: Flavor = .none
     
-    @State var pickedDayOfWeek : Int {
-        var dayInt = 0
-        
-        switch(Date().formatted(Date.FormatStyle().weekday())) {
-        case("Sun"):
-            dayInt = 0
-        case("Mon"):
-            dayInt = 1
-        case("Tue"):
-            dayInt = 2
-        case("Wed"):
-            dayInt = 3
-        case("Thu"):
-            dayInt = 4
-        case("Fri"):
-            dayInt = 5
-        case("Sat"):
-            dayInt = 6
-        default:
-            dayInt = 0
-        }
-        
-        return dayInt
-    }
+    @State var pickedDayOfWeek = 1
     
     var body: some View {
         NavigationView {
