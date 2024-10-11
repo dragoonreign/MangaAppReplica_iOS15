@@ -14,13 +14,12 @@ struct FavoritesView: View {
     
     var body: some View {
         NavigationView {
-            
-            
             VStack {
                 // TEST
                 // Replace here with other
                 MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                 MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
+                Spacer()
             }
             // .toolbar {
             //     ToolbarItem(placement: .principal) {

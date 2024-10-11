@@ -12,7 +12,11 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var mangas: Mangas
     
-    @State var pickedDayOfWeek = 1 // 3 options here. Use client side data manager like appdata/userdata to save picked day, use current weekday, or leave it as is. 
+    // 3 options here.
+    // 1 Use client side data manager like appdata/userdata to save picked day,
+    // 2 use current weekday, or
+    // 3 leave it as is.
+    @State var pickedDayOfWeek = 1
     
 //    init() {
 //        navBarAppearance.configureWithOpaqueBackground()
