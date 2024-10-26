@@ -18,18 +18,9 @@ struct HomeView: View {
     // 3 leave it as is.
     @State var pickedDayOfWeek = 1
     
-//    init() {
-//        navBarAppearance.configureWithOpaqueBackground()
-//        navBarAppearance.backgroundColor = .red
-//
-//        UINavigationBar.appearance().standardAppearance = navBarAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-//    }
-    
     var body: some View {
         NavigationView {
             // banner view here
-            
             ScrollView(.vertical) {
                 // 新連載
                 
@@ -39,16 +30,12 @@ struct HomeView: View {
                 // List(mangalist) // 2-12
                 
                 VStack {
-                    // TEST
-                    // Replace here with other
                     Text("Jump+ manga list")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
                     MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                     MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
                 }
-//                .background(.black)
-                
                 
                 VStack {
                     // 最近見た
@@ -68,8 +55,6 @@ struct HomeView: View {
                 }
                 
                 VStack {
-                    // TEST
-                    // Replace here with other
                     Text("Jump+ manga list")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle)
@@ -77,13 +62,11 @@ struct HomeView: View {
                     MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
                 }
                 .background(.black)
-//                .preferredColorScheme(.dark)
                 
                 //use array of fitered manga ex) List of monday mangas
                 VStack {
                     Text("Ads")
                     AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
-    //                    .background(.black)
                 }
                 
                 VStack {
@@ -105,46 +88,14 @@ struct HomeView: View {
                 VStack {
                     Text("Ads")
                     AutoScrollerView(imageNames: ["UK", "US", "Germany", "Italy", "Ireland", "Spain", "Estonia"])
-    //                    .background(.black)
                 }
-                
-//                VStack {
-//                    // 最新の読切はこちら
-//                    Text("Read one shots here")
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .font(.largeTitle)
-//                    HorizontalMangaSelectionView()
-//                }
-//
-//                VStack {
-//                    // 今だけ無料
-//                    Text("Free for limited time")
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .font(.largeTitle)
-//                    HorizontalMangaSelectionView()
-//                }
             }
-//            .defaultScrollAnchor(.center)
-//            .background(.primary)
-//            .preferredColorScheme(.dark)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("US")
                         .ignoresSafeArea()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(.red)
-//                    List(){
-//
-//                    }
-//                    .toolbarBack
-//                        .resizable()
-//                        .scaledToFit()
-//                    Picker("Flavor", selection: $selectedFlavor) {
-//                        ForEach(Flavor.allCases) { flavor in
-//                            Text(flavor.rawValue.capitalized)
-//                        }
-//                    }
-//                    .pickerStyle(.segmented)
                 }
             }
         }
