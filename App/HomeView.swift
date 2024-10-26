@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-//let navBarAppearance = UINavigationBarAppearance()
-
 struct HomeView: View {
     @EnvironmentObject var mangas: Mangas
     
