@@ -15,8 +15,6 @@ struct VerticalMangaSelectionView: View {
     
     let filter: FilterType
     
-//    @State var sort: SortType = .name
-    
     var filteredMangas: [Manga] {
         switch filter {
         case .none:
