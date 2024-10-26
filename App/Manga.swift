@@ -32,13 +32,7 @@ class Manga: ObservableObject, Identifiable, Codable {
         
     }
     
-    //    init (mangaUpdateDay: MangaUpdateDay) {
-    //        self.mangaUpdateDay = mangaUpdateDay
-    //    }
-    
     static let example = Manga()
-    
-    
 }
 
 
@@ -101,7 +95,6 @@ class Mangas: ObservableObject {
         }
     }
     
-    //challenge 2
     private func saveFile(data: Data) {
         let url = getDocumentDirectory().appendingPathComponent(Self.saveKey)
         
@@ -112,7 +105,6 @@ class Mangas: ObservableObject {
         }
     }
     
-    //challenge 2
     private func loadFile() -> Data? {
         let url = getDocumentDirectory().appendingPathComponent(Self.saveKey)
         
@@ -123,29 +115,10 @@ class Mangas: ObservableObject {
         return nil
     }
     
-    //challenge 2
     private func getDocumentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-    
-//    func decode<T: Decodable>(_ file: String) -> T {
-//        guard let url = self.url(forResource: file, withExtension: nil) else {
-//            fatalError("Failed to locate \(file) in bundle.")
-//        }
-//
-//        guard let data = try? Data(contentsOf: url) else {
-//            fatalError("Failed to load \(file) from bundle.")
-//        }
-//
-//        let decoder = JSONDecoder()
-//
-//        guard let loaded = try? decoder.decode(T.self, from: data) else {
-//            fatalError("Failed to decode \(file) from bundle.")
-//        }
-//
-//        return loaded
-//    }
 }
 
 
