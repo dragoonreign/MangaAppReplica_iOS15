@@ -13,7 +13,6 @@ struct MangaDetailView: View {
     @EnvironmentObject var mangas: Mangas
     var manga: Manga
     var chapters = Chapters()
-//    var message: String
     
     var body: some View {
         ScrollView(.vertical) {
@@ -66,8 +65,6 @@ struct MangaDetailView: View {
                 List(0..<10) { num in
                     NavigationLink() {
                         Text("Chapter \(num)")
-//                        MangaDetailView(manga: manga)
-//                                        mangas.toggleRecentlyRead(manga)
                     } label: {
                         // Show the image of the manga
                         HStack{
@@ -85,9 +82,6 @@ struct MangaDetailView: View {
                 .frame(minHeight: minRowHeight * CGFloat(mangas.shelf.count + 2))
             }
         }
-//        .onAppear {
-//            mangas.toggleRecentlyRead(manga)
-//        }
         //if this was ios 16 toolbar { hidetoolbar }
     }
 }
