@@ -17,6 +17,4 @@ extension Date {
             return String(firstLetter).capitalized
         }
     }
-    
-//    static var full
 }
