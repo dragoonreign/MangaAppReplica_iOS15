@@ -20,19 +20,6 @@ struct FreeMangaView: View {
             .pickerStyle(.segmented)
         }
         Text("Hello world")
-//        VStack {
-//            Picker("Flavor", selection: $selectedFlavor) {
-//                ForEach(Flavor.allCases) { flavor in
-//                    Text(flavor.rawValue.capitalized)
-//                }
-//            }
-//            Picker("Topping", selection: $selectedTopping) {
-//                ForEach(Topping.allCases) { topping in
-//                    Text(topping.rawValue.capitalized)
-//                }
-//            }
-//        }
-//        .pickerStyle(.segmented)
     }
 }
 
