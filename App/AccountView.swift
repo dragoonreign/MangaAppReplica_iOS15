@@ -12,7 +12,6 @@ struct AccountView: View {
     
     var body: some View {
         NavigationView {
-    //        Text("Account View")
             HStack {
                 VerticalMangaSelectionView(filter: selectedFlavor.suggestedFilter)
             }
