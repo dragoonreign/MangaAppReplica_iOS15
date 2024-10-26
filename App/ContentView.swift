@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-
-
-//enum Topping: String, CaseIterable, Identifiable {
-//    case nuts, cookies, blueberries
-//    var id: Self { self }
-//}
-
 enum Flavor: String, CaseIterable, Identifiable {
     case none, recent, favorite
     var id: Self { self }
