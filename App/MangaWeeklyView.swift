@@ -47,8 +47,6 @@ struct MangaWeeklyView: View {
             $0.mangaUpdateDay == mangaFilteredArray[pickedDayOfWeek]
         }
     }
-    
-    //I want array of filtered mangas [monday manga, tuesday manga, ...]
 
     let columnsFlex = [
         GridItem(.flexible(minimum: 100.0))
@@ -101,9 +99,6 @@ struct MangaWeeklyView: View {
                         }
                     }
                 }
-    //            MangaListView()
-                //vstack
-    //            .background(.primary)
             }
         }
     }
