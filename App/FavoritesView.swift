@@ -15,22 +15,10 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // TEST
-                // Replace here with other
                 MyCalenderView(pickedDayOfWeek: $pickedDayOfWeek)
                 MangaWeeklyView(pickedDayOfWeek: $pickedDayOfWeek)
                 Spacer()
             }
-            // .toolbar {
-            //     ToolbarItem(placement: .principal) {
-            //         Picker("Flavor", selection: $selectedFlavor) {
-            //             ForEach(Flavor.allCases) { flavor in
-            //                 Text(flavor.rawValue.capitalized)
-            //             }
-            //         }
-            //         .pickerStyle(.segmented)
-            //     }
-            // }
         }
     }
 }
