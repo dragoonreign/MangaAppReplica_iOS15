@@ -44,7 +44,7 @@ Account shows user their most recenlty viewed and favorite manga (third option i
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/MangaAppSS3.png?raw=true">
 </p>
 
-<h1> Credit </h1>
+<h2> Credit </h2>
 
 I do not own any of the placeholder flag images, and borrowed from the url link below . 
 
