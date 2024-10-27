@@ -21,8 +21,10 @@ struct MangaDetailView: View {
                     .resizable()
                     .scaledToFill()
                 
+                //Title
                 HStack {
-                    Text("Manga Detail View \(manga.title)")
+                    Text("\(manga.title)")
+                        .font(.largeTitle)
                     Spacer()
                     Button {
                         mangas.toggleFavorite(manga)
@@ -42,12 +44,29 @@ struct MangaDetailView: View {
                 }
                 .padding([.leading])
                 
+                //Author
                 HStack{
-                    Text("Manga Detail View \(manga.author)")
+                    Text("\(manga.author)")
+                        .font(.title2)
                     Spacer()
                 }
                 .padding([.leading])
                 
+                Divider()
+                
+                //Summary
+                Group {
+                    HStack {
+                        Text("Summary")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    Text("\(manga.description)")
+                }
+                .padding([.leading])
+                
+                //Views and comments
                 HStack {
                     Spacer()
                     Image(systemName: "eye")
@@ -61,6 +80,8 @@ struct MangaDetailView: View {
                     Text("\(manga.totalComments)")
                 }
                 .padding([.trailing])
+                
+                Divider()
                 
                 List(0..<10) { num in
                     NavigationLink() {

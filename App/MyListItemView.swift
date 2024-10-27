@@ -24,22 +24,12 @@ struct MyListItemView: View {
                     Image(manga.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: .infinity)
-                        .frame(maxHeight: 50)
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
                     
                     VStack {
                         Text("\(manga.title)")
-                        Text("\(manga.author)")
-                    }
-                    
-                    VStack {
-                        Image(systemName: "eye")
-                        Image(systemName: "message")
-                    }
-                    
-                    VStack {
-                        Text("\(manga.totalViews)")
-                        Text("\(manga.totalComments)")
+                            .lineLimit(0)
+                            .padding([.leading])
                     }
                 }
             }
