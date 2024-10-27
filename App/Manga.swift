@@ -13,15 +13,18 @@ enum MangaUpdateDay: Codable {
 }
 
 class Manga: ObservableObject, Identifiable, Codable {
-    var id = UUID()
+    var id: String = ""
     var isbn: Int = 0
     var title: String = "Manga Title"
     var author: String = "Manga Author"
     var url: String = "Manga URL"
+    var image: String = ""
+    var description: String = ""
     var isFavorite: Bool = false
     var isRecentlyRead: Bool = false
     var isUpdated: Bool = false
-    var mangaUpdateDay: MangaUpdateDay = .monday
+    var mangaUpdateDay: String = ".monday"
+//    var mangaUpdateDay: MangaUpdateDay = .monday
     var totalViews: Int = 100
     var totalComments: Int = 250
     
@@ -47,12 +50,17 @@ class Mangas: ObservableObject {
     var manga4 = Manga()
     @Published private(set) var shelf: [Manga]
     
+    @Published private(set) var collection: [Manga]
+    
     init() {
+        collection = []
         shelf = []
         shelf.append(manga)
         shelf.append(manga2)
         shelf.append(manga3)
         shelf.append(manga4)
+        
+        collection = Bundle.main.decode("mangas.json")
         
         if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Manga].self, from: data) {
@@ -61,6 +69,14 @@ class Mangas: ObservableObject {
             }
         }
     }
+    
+    static let allMangas: [Manga] = Bundle.main.decode("mangas.json")
+    static let example = allMangas[0]    
+    
+//    func getAllMangas() -> [Manga] {
+//        collection = Bundle.main.decode("mangas.json")
+//        return collection
+//    }
     
     func addshelf(_ manga: Manga) {
         shelf.append(manga)

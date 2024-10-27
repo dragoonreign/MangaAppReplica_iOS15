@@ -18,13 +18,13 @@ struct VerticalMangaSelectionView: View {
     var filteredMangas: [Manga] {
         switch filter {
         case .none:
-            return mangas.shelf
+            return mangas.collection
         case .favorites:
-            return mangas.shelf.filter { $0.isFavorite }
+            return mangas.collection.filter { $0.isFavorite }
         case .recentlyRead:
-            return mangas.shelf.filter { $0.isRecentlyRead }
+            return mangas.collection.filter { $0.isRecentlyRead }
         case .updated:
-            return mangas.shelf.filter { $0.isUpdated }
+            return mangas.collection.filter { $0.isUpdated }
         }
     }
     

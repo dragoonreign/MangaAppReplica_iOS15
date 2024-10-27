@@ -43,7 +43,7 @@ struct HorizontalMangaSelectionView: View {
                         mangas.toggleRecentlyRead(manga)
                     } label: {
                         // Show the image of the manga
-                        Image("US")
+                        Image(manga.image)
                             .resizable()
                             .frame(width: 200, height: 150)
                     }

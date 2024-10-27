@@ -40,10 +40,12 @@ struct MangaWeeklyView: View {
     var m_ImageSizeRank2To3 = 200
     var m_ImageSizeRank4 = 150
     
-    var mangaFilteredArray = [MangaUpdateDay.sunday, MangaUpdateDay.monday, MangaUpdateDay.tuesday, MangaUpdateDay.wednesday, MangaUpdateDay.thursday, MangaUpdateDay.friday, MangaUpdateDay.saturday]
+    //Note to self enum version didnt work for bundle decode
+//    var mangaFilteredArray = [MangaUpdateDay.sunday, MangaUpdateDay.monday, MangaUpdateDay.tuesday, MangaUpdateDay.wednesday, MangaUpdateDay.thursday, MangaUpdateDay.friday, MangaUpdateDay.saturday]
+    var mangaFilteredArray = [".sunday", ".monday", ".tuesday", ".wednesday", ".thursday", ".friday", ".saturday"]
     
     var filteredMangaList: [Manga] {
-        return mangas.shelf.filter {
+        return mangas.collection.filter {
             $0.mangaUpdateDay == mangaFilteredArray[pickedDayOfWeek]
         }
     }

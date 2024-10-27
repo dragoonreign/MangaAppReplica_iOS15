@@ -17,7 +17,7 @@ struct MangaDetailView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                Image("France")
+                Image(manga.image)
                     .resizable()
                     .scaledToFill()
                 
@@ -68,7 +68,7 @@ struct MangaDetailView: View {
                     } label: {
                         // Show the image of the manga
                         HStack{
-                            Image("Spain")
+                            Image(manga.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 50)

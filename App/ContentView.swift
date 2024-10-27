@@ -22,11 +22,25 @@ extension Flavor {
     }
 }
 
+extension View {
+    func Print(_ vars: Any...) -> some View {
+        for v in vars {
+            print(v)
+        }
+        return EmptyView()
+    }
+}
+
 struct ContentView: View {
+//    @StateObject var mangas: [Manga] = Bundle.main.decode("mangas.json")
+    
+//    let collection = Mangas()
     @StateObject var mangas = Mangas()
     
     var body: some View {
         TabView {
+//            HomeView(mangas: mangas)
+//            Print(mangas[0])
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")

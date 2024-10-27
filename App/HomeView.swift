@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var mangas: Mangas
     
+//    let mangas : Manga
+    
     // 3 options here.
     // 1 Use client side data manager like appdata/userdata to save picked day,
     // 2 use current weekday, or
@@ -102,6 +104,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
+//        HomeView(mangas: Mangas.example)
         HomeView()
             .environmentObject(Mangas())
     }
