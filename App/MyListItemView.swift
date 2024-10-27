@@ -21,7 +21,7 @@ struct MyListItemView: View {
             } label: {
                 // Show the image of the manga
                 HStack {
-                    Image("US")
+                    Image(manga.image)
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: .infinity)

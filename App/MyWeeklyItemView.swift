@@ -22,7 +22,7 @@ struct MyWeeklyItemView: View {
                     }
             } label: {
                 // Show the image of the manga
-                Image("US")
+                Image(manga.image)
                     .resizable()
                     .scaledToFill()
                     .frame(minWidth: CGFloat(widthInt), maxWidth: .infinity)

@@ -1,6 +1,6 @@
 [
 	{
-		"id": "les-trois-vallees",
+		"id": "0",
 		"isbn": 0,
 		"title": "Dragon Ball Z",
         "author": "Akira Toriyama",
@@ -15,7 +15,7 @@
 		"totalComments": 335,
 	},
     {
-        "id": "les-trois-vallees",
+        "id": "1",
         "isbn": 0,
         "title": "Hunter x Hunter",
         "author": "Yoshihiro Togashi",
@@ -30,7 +30,7 @@
         "totalComments": 1000,
     },
     {
-        "id": "les-trois-vallees",
+        "id": "2",
         "isbn": 0,
         "title": "Fullmetal Alechemist",
         "author": "Hiromu Arakawa",
@@ -45,7 +45,7 @@
         "totalComments": 500,
     },
     {
-        "id": "les-trois-vallees",
+        "id": "3",
         "isbn": 0,
         "title": "Testestest",
         "author": "testetst",
