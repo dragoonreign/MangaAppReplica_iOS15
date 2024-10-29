@@ -24,7 +24,7 @@ Home view is where all the manga is listed and it shows users different sections
 The image on the right is a detail view and the star represent favorite, where users have an option to favorite a manga.
 
 <p align="left">
-  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/MangaAppSS1.png">
+  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS1 - iPhone 11 - 2024-10-28 at 18.11.28.png">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/MangaAppSS2.png">
 </p>
 
