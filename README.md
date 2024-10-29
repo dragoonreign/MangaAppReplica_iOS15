@@ -38,7 +38,7 @@ The image on the right is a detail view and the star represent favorite, where u
 
 <h2> Account </h2>
 
-Account tab displays a filter at the top of the page starting with none showing users a full collection, recenlty viewed shows recently viewed mangas, and last option is favorite shows user their favorite manga.
+Account page displays a filter at the top, starting from the left is no filter shows a full collection of manga, recenlty view shows recently viewed mangas, and favorite shows user their favorite manga.
 
 <p align="left">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS3.png?raw=true">
