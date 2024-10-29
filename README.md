@@ -9,10 +9,11 @@ Language: SwiftUI
 My first attempt to recreate a live service app from scratch. 
 The app uses JSON-codable data for manga and chapter classes in multiple view components.
 
-<! <h2>Showcase:</h2>
+<!-- 
+<h2>Showcase:</h2>
 
 https://github.com/user-attachments/assets/4d8480eb-96e6-41b9-a1f3-2b46636b8afc
->
+-->
 
 <h2> Details </h2>
 
