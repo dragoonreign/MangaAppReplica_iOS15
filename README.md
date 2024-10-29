@@ -27,9 +27,9 @@ Home view is where all the manga is listed and it shows users different sections
 
 <h2> Favorite/Weekday </h2>
 
-Favorite (or weekday list): displays a list of mangas updated in a certain weekday. A user can select weekday from the top navigation bar where its displaying a first letter of the weekday.
+Favorite (or weekday list): displays a list of mangas updated in a certain weekday. To navigate a user selects a weekday from the top navigation bar where its displaying a first letter of the weekday.
 
-The image on the right is a detail view and the star represent favorite, where users have an option to favorite a manga.
+The image on the right is a detail view of the manga with a star representing favorite, where users have an option to add the manga to their collection of favorites.
 
 <p align="left">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS2 -Simulator Screen Shot - iPhone 11 - 2024-10-28 at 18.12.10.png">
