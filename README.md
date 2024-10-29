@@ -33,7 +33,7 @@ Favorite (or weekday list): displays a list of mangas updated in a certain weekd
 
 <p align="left">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS2 -Simulator Screen Shot - iPhone 11 - 2024-10-28 at 18.12.10.png">
-  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS3.png?raw=true">
+  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS5.png?raw=true">
 </p>
 
 <h2> Account </h2>
@@ -41,8 +41,8 @@ Favorite (or weekday list): displays a list of mangas updated in a certain weekd
 Account shows user their most recenlty viewed and favorite manga (third option is for testing/debugging purpose).
 
 <p align="left">
+  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS3.png?raw=true">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS4.png?raw=true">
-  <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS5.png?raw=true">
   <img width="250" height="500" src="https://github.com/dragoonreign/MangaAppReplica_iOS15/blob/main/ScreenShot/SS6.png?raw=true">
 </p>
 
